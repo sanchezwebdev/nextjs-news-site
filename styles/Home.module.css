@@ -29,6 +29,7 @@
 
 .spotlight1{}
 .spotlight2{}
+.spotlight3{}
 
 .containerFeatured,
 .containerHeadline,
@@ -49,24 +50,31 @@
   display: none;
 }
 .containerMain{
-  justify-items: center;
-  /* border: red solid 1px; */
-  margin: 3% 5%;
+  position: relative;
   display: grid;
-  grid-template-columns: 65% auto 35%;
-  grid-template-rows: auto auto;
+  justify-items: center;
+  margin: 3% 5%;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
   grid-template-areas:
+  "cTop"
+  "trending"
+  "spotlight"
+}
+.containerTop{
+  display: grid;
+  grid-template-columns: 60% auto 40%;
+  grid-template-rows: 100%;
+  grid-template-areas: 
   "headline vDivider featured"
-  "trending trending trending"
 }
 .containerHeadline{
   margin-right: 3%;
-  /* min-height: 650px; */
 }
 .containerFeatured{
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(5, minmax(120px, auto));
+  grid-template-rows: repeat(5, 20%);
   grid-template-areas:
   "featured1"
   "featured2"
@@ -77,10 +85,6 @@
 }
 
 .containerTrending{
-  
-  min-height: 500px;
-  max-height: 600px;
-  position: relative;
   display: grid;
   grid-column-gap: 5%;
   grid-template-columns: 45% 45%;
@@ -91,6 +95,17 @@
   "trending2 trending5"
   "trending3 trending6";
   justify-content: center;
+}
+
+.containerSpotlight{
+  margin-top: 3%;
+  display: grid;
+  grid-column-gap: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+  "slT . ."
+  "sl1 sl2 sl3";
 }
 
 .vDivider{
@@ -105,6 +120,8 @@
 .containerHeadline {grid-area: headline;}
 .containerFeatured{grid-area: featured}
 .containerTrending{grid-area: trending}
+.containerSpotlight{grid-area: spotlight}
+.containerTop{grid-area: cTop}
 .featured1{grid-area: featured1}
 .featured2{grid-area: featured2}
 .featured3{grid-area: featured3}
@@ -118,6 +135,10 @@
 .trending4{grid-area: trending4}
 .trending5{grid-area: trending5}
 .trending6{grid-area: trending6}
+.spotlightTitle{grid-area: slT}
+.spotlight1{grid-area: sl1}
+.spotlight2{grid-area: sl2}
+.spotlight3{grid-area: sl3}
 
 .featDivider{display: none;}
 .hlDivider{display: none;}

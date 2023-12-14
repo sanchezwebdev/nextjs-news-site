@@ -38,6 +38,7 @@ const Headline = ({ data, className }) => {
 
   return (
     <div className={`${styles.container} ${className}`}>
+      {/* use short-circuit evaluation  */}
       {articleData && (
         <>
         

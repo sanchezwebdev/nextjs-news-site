@@ -42,6 +42,7 @@ const Spotlight = ({ data, className }) => {
     // Checking className for specific conditions
     if (className === 'Home_spotlight1__ic7om') {titleClass += ` ${styles.s1Title}`;}
     if (className === 'Home_spotlight2__MfRih') {titleClass += ` ${styles.s2Title}`;}
+    if (className === 'Home_spotlight3__vvfhJ') {titleClass += ` ${styles.s3Title}`;}
 
     return titleClass;
   };

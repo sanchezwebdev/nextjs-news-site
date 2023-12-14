@@ -1,38 +1,72 @@
-.container{
+.container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
+    width: 100%;
 }
-.s1Title{
+
+.s1Title {
     position: absolute;
-    top:10%;
+    top: 5%;
     width: 80%;
     color: white;
-    font-size: 28px;
+    font-size: 20px;
 }
-.s2Title{
+
+.s2Title {
     position: absolute;
-    top:75%;
-    width: 80%;
+    top: 30%;
+    left: 10%;
     color: white;
-    font-size: 28px;
+    font-size: 22px;
+    width: 20%;
 }
+
+.s3Title {
+    color: #800f2f;
+    position: absolute;
+    width: 40%;
+    right: 2%;
+    top: 5%;
+    font-size: 20px;
+}
+
 .image {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    margin-top: 3%;
 }
 
 .divider {
     margin: 5% 0 0 0;
 }
 
+@media(min-width: 600px) {
+    .s3Title {
+        font-size: 24px;
+    }
+
+}
+
 @media(min-width: 740px) {
     .container {
-        position: relative;
+        height: 100%;
+    }
+.s1Title, .s2Title, .s3Title{
+    font-size: 16px;
+}
+.s2Title{
+    width: 80%;
+    top: 65%;
+}
+.s3Title{
+    right: 10%;
+    top: 15%; 
+}
+    .container {
+        /* position: relative;
         display: grid;
         grid-template-columns: 60% 40%;
         grid-template-rows: repeat(3, auto);
@@ -40,10 +74,10 @@
             "title image"
             ". image"
             "divider divider";
-            justify-items: center;
+            justify-items: center; */
     }
 
-    .divider {
+    /* .divider {
         grid-area: divider;
         display: block;
         padding: 2%;
@@ -65,11 +99,18 @@
         grid-area: image;
         max-height: 100px;
 
-    }
+    } */
 }
 
 @media(min-width: 1000px) {
-       .container {
+    .s1Title, .s2Title, .s3Title{
+        font-size: 20px;
+    }
+
+    .s2Title{
+        /* top: 60%; */
+    }
+    /* .container {
         display: grid;
         grid-template-columns: 60% 40%;
         grid-template-rows: repeat(3, auto);
@@ -77,19 +118,28 @@
             "title image"
             "description image"
             "divider divider";
-            justify-items: center;
-            
+        justify-items: center;
+
     }
+
     .description {
         display: block;
         font-size: 11px;
     }
-    .title{
+
+    .title {
         font-size: 12px;
-        
+
     }
 
-    .title, .description{
+    .title,
+    .description {
         padding: 0 5%;
+    } */
+}
+
+@media(min-width: 1200px){
+    .s1Title, .s2Title, .s3Title{
+        font-size: 24px;
     }
 }
