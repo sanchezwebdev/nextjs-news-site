@@ -1,0 +1,127 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.header{
+  min-height: 50px;
+}
+
+.trendingTitle, 
+.spotlightTitle,
+.topTitle{
+  margin: 3% 0 0 0;
+  color: gray;
+  opacity: .5;
+  align-self: flex-start; /* This aligns the item to the left */
+}
+.vDivider{
+  display: none;
+}
+.containerMain {
+  margin: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spotlight1{}
+.spotlight2{}
+
+.containerFeatured,
+.containerHeadline,
+.containerTrending,
+.containerSpotlight{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+@media (min-width: 740px){
+
+  .header{
+    height: 200px;
+  }
+
+.topTitle{
+  display: none;
+}
+.containerMain{
+  justify-items: center;
+  /* border: red solid 1px; */
+  margin: 3% 5%;
+  display: grid;
+  grid-template-columns: 65% auto 35%;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "headline vDivider featured"
+  "trending trending trending"
+}
+.containerHeadline{
+  margin-right: 3%;
+  /* min-height: 650px; */
+}
+.containerFeatured{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(5, minmax(120px, auto));
+  grid-template-areas:
+  "featured1"
+  "featured2"
+  "featured3"
+  "featured4"
+  "featured5";
+  margin-left: 5%;
+}
+
+.containerTrending{
+  
+  min-height: 500px;
+  max-height: 600px;
+  position: relative;
+  display: grid;
+  grid-column-gap: 5%;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 10% repeat(3, minmax(150px, 30%));
+  grid-template-areas:
+  "trendingTitle trendingTitle"
+  "trending1 trending4"
+  "trending2 trending5"
+  "trending3 trending6";
+  justify-content: center;
+}
+
+.vDivider{
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  max-height: 450px;
+  display: block;
+}
+
+
+.containerHeadline {grid-area: headline;}
+.containerFeatured{grid-area: featured}
+.containerTrending{grid-area: trending}
+.featured1{grid-area: featured1}
+.featured2{grid-area: featured2}
+.featured3{grid-area: featured3}
+.featured4{grid-area: featured4}
+.featured5{grid-area: featured5}
+.vDivider{grid-area: vDivider}
+.trendingTitle{grid-area: trendingTitle}
+.trending1{grid-area: trending1}
+.trending2{grid-area: trending2}
+.trending3{grid-area: trending3}
+.trending4{grid-area: trending4}
+.trending5{grid-area: trending5}
+.trending6{grid-area: trending6}
+
+.featDivider{display: none;}
+.hlDivider{display: none;}
+
+}
+
+

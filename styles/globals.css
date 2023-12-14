@@ -1,0 +1,24 @@
+@import './fonts.css';
+
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .MuiDivider-root{
+    width: 90%;
+  }
+@media (max-width:740px){
+  img{
+    max-height: 400px;
+  }
+}
