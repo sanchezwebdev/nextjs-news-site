@@ -40,13 +40,13 @@
 
     .title {
         grid-area: title;
-        font-size: 16px;
+        font-size: 18px;
         padding-right: 10%;
     }
 
     .description {
         grid-area: description;
-        font-size: 12px;
+        font-size: 14px;
         padding-right: 10%;
     }
 

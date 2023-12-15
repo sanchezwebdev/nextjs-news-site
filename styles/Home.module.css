@@ -11,30 +11,29 @@
 
 .trendingTitle, 
 .spotlightTitle,
-.topTitle{
+.topTitle,
+.additionalTitle{
   margin: 3% 0 0 0;
   color: gray;
   opacity: .5;
-  align-self: flex-start; /* This aligns the item to the left */
+  align-self: flex-start; 
+}
+.additionalTitle{
+  margin-bottom: 2%;
 }
 .vDivider{
   display: none;
 }
 .containerMain {
   margin: 2% 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-
-.spotlight1{}
-.spotlight2{}
-.spotlight3{}
 
 .containerFeatured,
 .containerHeadline,
 .containerTrending,
-.containerSpotlight{
+.containerSpotlight,
+.containerAdditional,
+.containerMain{
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -55,11 +54,12 @@
   justify-items: center;
   margin: 3% 5%;
   grid-template-columns: 100%;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: repeat(4, auto);
   grid-template-areas:
   "cTop"
   "trending"
   "spotlight"
+  "additional"
 }
 .containerTop{
   display: grid;
@@ -87,7 +87,7 @@
 .containerTrending{
   display: grid;
   grid-column-gap: 5%;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: auto auto;
   grid-template-rows: 10% repeat(3, minmax(150px, 30%));
   grid-template-areas:
   "trendingTitle trendingTitle"
@@ -100,12 +100,25 @@
 .containerSpotlight{
   margin-top: 3%;
   display: grid;
-  grid-column-gap: 5%;
+  grid-gap: 3%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr;
   grid-template-areas:
   "slT . ."
   "sl1 sl2 sl3";
+}
+.containerAdditional{
+  width: 100%;
+  margin-top: 3%;
+  grid-gap: 1%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+  "at at at at"
+  "additional1 additional2 additional3 additional4"
+  "additional5  additional6 additional7 additional8"
+  "additional9 additional10 additional11 additional12";
 }
 
 .vDivider{
@@ -121,13 +134,16 @@
 .containerFeatured{grid-area: featured}
 .containerTrending{grid-area: trending}
 .containerSpotlight{grid-area: spotlight}
+.containerAdditional{grid-area: additional}
 .containerTop{grid-area: cTop}
+
 .featured1{grid-area: featured1}
 .featured2{grid-area: featured2}
 .featured3{grid-area: featured3}
 .featured4{grid-area: featured4}
 .featured5{grid-area: featured5}
 .vDivider{grid-area: vDivider}
+
 .trendingTitle{grid-area: trendingTitle}
 .trending1{grid-area: trending1}
 .trending2{grid-area: trending2}
@@ -135,14 +151,33 @@
 .trending4{grid-area: trending4}
 .trending5{grid-area: trending5}
 .trending6{grid-area: trending6}
+
 .spotlightTitle{grid-area: slT}
 .spotlight1{grid-area: sl1}
 .spotlight2{grid-area: sl2}
 .spotlight3{grid-area: sl3}
 
+.additionalTitle{grid-area: at}
+.additional1 { grid-area: additional1; }
+.additional2 { grid-area: additional2; }
+.additional3 { grid-area: additional3; }
+.additional4 { grid-area: additional4; }
+.additional5 { grid-area: additional5; }
+.additional6 { grid-area: additional6; }
+.additional7 { grid-area: additional7; }
+.additional8 { grid-area: additional8; }
+.additional9 { grid-area: additional9; }
+.additional10 { grid-area: additional10; }
+.additional11 { grid-area: additional11; }
+.additional12 { grid-area: additional12; }
+
 .featDivider{display: none;}
 .hlDivider{display: none;}
 
 }
+
+.spotlight1{}
+.spotlight2{}
+.spotlight3{}
 
 

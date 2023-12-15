@@ -6,6 +6,7 @@ import Headline from "../components/Headline";
 import Featured from "../components/Featured";
 import Trending from "../components/Trending";
 import Spotlight from "../components/Spotlight"
+import TitlePicture from "../components/TitlePicture"
 import useDeviceSize from './helper/useDeviceSize'
 import fetchData from "./api/fetchData";
 import getArticleData from "./helper/getArticleData";
@@ -78,6 +79,38 @@ const Home = (props) => {
           <Spotlight className={styles.spotlight2}  data={getArticleData("spotlight2", props.data)}/>
           <Spotlight className={styles.spotlight3}  data={getArticleData("spotlight3", props.data)}/>
         </div>
+
+       <div className={styles.containerAdditional}>
+          <h4 className={styles.additionalTitle}>More News</h4>
+            <Article className={styles.additional1} data={getArticleData("additional1", props.data)} />
+            <Article className={styles.additional2} data={getArticleData("additional2", props.data)} />
+
+            {isWideViewport ? 
+            <Article className={styles.additional3} data={getArticleData("additional3", props.data)} />:
+            <TitlePicture className={styles.additional3} data={getArticleData("additional3", props.data)} />
+            }
+            <Article className={styles.additional4} data={getArticleData("additional4", props.data)} />
+            <Article className={styles.additional5} data={getArticleData("additional5", props.data)} />
+            {isWideViewport ? 
+            <TitlePicture className={styles.additional6} data={getArticleData("additional6", props.data)} />:
+            <Article className={styles.additional6} data={getArticleData("additional6", props.data)} />
+            }
+            <Article className={styles.additional7} data={getArticleData("additional7", props.data)} />
+
+            {isWideViewport ? 
+            <TitlePicture className={styles.additional8} data={getArticleData("additional8", props.data)} />:
+            <Article className={styles.additional8} data={getArticleData("additional8", props.data)} />
+            }
+            
+            <TitlePicture className={styles.additional9} data={getArticleData("additional9", props.data)} />
+                    
+            <Article className={styles.additional10} data={getArticleData("additional10", props.data)} />
+            <Article className={styles.additional11} data={getArticleData("additional11", props.data)} />
+            <Article className={styles.additional12} data={getArticleData("additional12", props.data)} />
+        </div>
+
+    
+
       </div>
     </div>
   );

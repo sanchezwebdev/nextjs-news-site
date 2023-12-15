@@ -41,7 +41,7 @@ const Article = ({ data, className }) => {
       {articleData && (
         <>
         
-          <h2 className={`${styles.title}, title`}>{articleData.title}</h2>
+          <h2 className={styles.title}>{articleData.title}</h2>
           <p className={styles.description}>{articleData.description}</p>
           <Divider className={styles.divider}/>
         </>
