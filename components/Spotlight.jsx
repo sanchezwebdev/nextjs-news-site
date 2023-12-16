@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Spotlight.module.css";
 import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/router'
 
 const Spotlight = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const [cmsUrl, setCmsUrl] = useState(null);
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/news/${articleData._id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,11 +57,12 @@ const Spotlight = ({ data, className }) => {
     <div className={`${styles.container} ${className}`}>
       {articleData && (
         <>
-          <h2 className={getTitleClass()}>{articleData.title}</h2>
-          {/* <p className={styles.description}>{articleData.description}</p> */}
-          <img src={cmsUrl} className={styles.image} alt="" />
+        <h2 className={getTitleClass()} onClick={handleNavigation}>{articleData.title}</h2>
+        <div className={styles.imageWrap}>
+          <img src={cmsUrl} className={styles.image} alt="" onClick={handleNavigation}/>
+        </div>
           <Divider className={styles.divider}/>
-        </>
+          </>
       )}
       
     </div>

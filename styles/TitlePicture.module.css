@@ -4,14 +4,17 @@
     object-fit: cover;
     margin-top: 5%;
 }
+.title:hover,
+.image:hover{
+    cursor: pointer;
+}
 
 .container{
     margin-top: 5%;
-    /* border: solid red 1px; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 0 5%; */
+    
 }
 .divider {
     margin: 5% 0 0 0;
@@ -22,6 +25,11 @@
 }
 
 @media(min-width: 740px){
+
+    .container{
+        min-height: 100%;
+        padding: 0 5%;
+    }
     .title{
         font-size: 14px;
     }
@@ -31,7 +39,7 @@
         margin: 5%;
     }
     .image{
-        max-height: 120px;
+        min-height: 150px;
         max-width: 90%;
     }
 

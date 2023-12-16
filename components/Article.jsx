@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Article.module.css";
 import Divider from '@mui/material/Divider';
+import createSlug from '../pages/helper/slug.js'
+import { useRouter } from 'next/router'
 
 const Article = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
-  const [cmsUrl, setCmsUrl] = useState(null);
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/news/${articleData._id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,8 +47,8 @@ const Article = ({ data, className }) => {
       {articleData && (
         <>
         
-          <h2 className={styles.title}>{articleData.title}</h2>
-          <p className={styles.description}>{articleData.description}</p>
+          <h2 className={styles.title}  onClick={handleNavigation}>{articleData.title}</h2>
+          <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
           <Divider className={styles.divider}/>
         </>
       )}

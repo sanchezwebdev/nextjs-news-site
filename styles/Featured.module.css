@@ -4,6 +4,11 @@
     align-items: center;
     margin-top: 5%;
 }
+.title:hover,
+.image:hover,
+.description:hover{
+    cursor: pointer;
+}
 .image {
     height: 100%;
     width: 100%;
@@ -34,8 +39,7 @@
     .divider {
         grid-area: divider;
         display: block;
-        padding: 2%;
-        margin: 0;
+        margin: 2% 0 0 0;
     }
 
     .title {
@@ -44,22 +48,22 @@
     }
 
     .description {
+        margin: 0;
         display: none;
         grid-area: description;
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .image {
         grid-area: image;
-        max-height: 70px;
-
+        max-height: 100px;
     }
 }
 
 @media(min-width: 1000px) {
        .container {
         display: grid;
-        grid-template-columns: 60% 40%;
+        grid-template-columns: 70% 30%;
         grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "title image"
@@ -68,15 +72,12 @@
             justify-items: center;
             
     }
+    .title{
+        font-size: 16px;
+    }
     .description {
         display: block;
-        font-size: 11px;
     }
-    .title{
-        font-size: 12px;
-        
-    }
-
     .title, .description{
         padding: 0 5%;
     }   

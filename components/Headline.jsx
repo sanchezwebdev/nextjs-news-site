@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Headline.module.css";
 import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/router'
+
+
 
 const Headline = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const [cmsUrl, setCmsUrl] = useState(null);
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/news/${articleData._id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,10 +50,11 @@ const Headline = ({ data, className }) => {
       {articleData && (
         <>
         
-          <h2 className={styles.title}>{articleData.title}</h2>
-          <p className={styles.description}>{articleData.description}</p>
-          <img src={cmsUrl} className={styles.image} alt="" />
+          <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
+          <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
+          <img src={cmsUrl} className={styles.image} alt="" onClick={handleNavigation}/>
           <br/><Divider className={styles.hlDivider}/>
+          
         </>
       )}
     </div>

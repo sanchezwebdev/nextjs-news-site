@@ -6,17 +6,15 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
   }
-
   body{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
-
+    overflow-x: hidden;
   }
-
   .MuiDivider-root{
     width: 90%;
   }
+
+
 @media (max-width:740px){
   img{
     max-height: 400px;

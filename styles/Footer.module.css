@@ -1,0 +1,59 @@
+.containerFooter{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    height: 650px;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.divider{
+    background-color:white;
+}
+.siteName{
+    font-size: 28px;
+    font-family: 'Chomsky'
+}
+
+.innerFooter {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10% 0;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.copyright{
+    font-size: 10px;
+}
+.icon{
+    font-size:xx-large;
+}
+@media(min-width: 740px){
+.siteName{
+    margin-left: 5%;
+    font-size: 32px;
+    width: 100%;
+    align-self: flex-start;
+}
+
+}
+@media(min-width: 1000px){
+.siteName{
+    font-size: 36px;
+}
+.innerFooter{
+    margin: 5% 0;
+}
+}

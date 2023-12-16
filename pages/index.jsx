@@ -7,6 +7,7 @@ import Featured from "../components/Featured";
 import Trending from "../components/Trending";
 import Spotlight from "../components/Spotlight"
 import TitlePicture from "../components/TitlePicture"
+import Footer from "../components/Footer"
 import useDeviceSize from './helper/useDeviceSize'
 import fetchData from "./api/fetchData";
 import getArticleData from "./helper/getArticleData";
@@ -20,11 +21,14 @@ const Home = (props) => {
 
   return (
     <div className={styles.body}>
-      <Header className={styles.header} />
-      <Divider style={{ marginBottom: '1px' }} />
-      <Divider/>
-      <div className={styles.containerMain}>
+      
+        <Header />
+        <Divider style={{ marginBottom: '1px' }} className={styles.headerDivider}/>
+        <Divider className={styles.headerDivider}/>
+        
+    
 
+      <div className={styles.containerMain}>
           <div className={styles.containerTop}>
 
               <div className={styles.containerHeadline}>
@@ -109,9 +113,10 @@ const Home = (props) => {
             <Article className={styles.additional12} data={getArticleData("additional12", props.data)} />
         </div>
 
-    
+            
 
       </div>
+      <Footer className={styles.footer}/>
     </div>
   );
 };

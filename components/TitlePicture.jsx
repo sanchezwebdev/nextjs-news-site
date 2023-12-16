@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/TitlePicture.module.css";
 import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/router'
 
 const TitlePicture = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const [cmsUrl, setCmsUrl] = useState(null);
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push(`/news/${articleData._id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,10 +46,9 @@ const TitlePicture = ({ data, className }) => {
     <div className={`${styles.container} ${className}`}>
       {articleData && (
         <>
-        
-          <h2 className={styles.title}>{articleData.title}</h2>
-          <img src={cmsUrl} className={styles.image} alt="" />
-          <Divider className={styles.divider}/>
+          <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
+          <img src={cmsUrl} className={styles.image} alt="" onClick={handleNavigation}/>
+          <Divider className={styles.divider} onClick={handleNavigation}/>
         </>
       )}
     </div>
