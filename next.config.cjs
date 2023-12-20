@@ -1,12 +1,19 @@
 /**
  * @type {import('next').NextConfig}
  */
+import './patch-fs.js';
+
 module.exports = {
-  cssModules: true,
-  cssLoaderOptions: {
-importLoaders: 1,
-localIdentName: "[]",
-},
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.stats = 'verbose';
+    config.optimization.splitChunks = {
+      chunks: 'all',
+    };
+    if (!isServer) {
+      config.parallelism = 1;
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
@@ -17,4 +24,3 @@ localIdentName: "[]",
     ],
   },
 };
-

@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Spotlight.module.css";
 import Divider from '@mui/material/Divider';
+import createSlug from "../helpers/slug"
 import { useRouter } from 'next/router'
 
 const Spotlight = ({ data, className }) => {
-  const [articleData, setArticleData] = useState(null);
-  const [cmsUrl, setCmsUrl] = useState(null);
   const router = useRouter();
-
-  const handleNavigation = () => {
-    router.push(`/news/${articleData._id}`);
-  };
+  const [articleData, setArticleData] = useState(null);
+  const formatedCmsUrl = data && data.cmsUrl 
+  ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
+  : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,24 +22,14 @@ const Spotlight = ({ data, className }) => {
     };
     fetchData();
   }, [data]);
+  
+  const handleNavigation = () => {
+    if (articleData && articleData.title) {
+      const slug = createSlug(articleData.title);
+      router.push(`/${slug}`);
+    }
+  };
 
-  useEffect(() => {
-    const fetchCmsUrl = async () => {
-      try {
-        if (articleData && articleData.imgId) {
-          const cmsResponse = await fetch(
-            `https://cdn.contentful.com/spaces/vdnl4md1xpsv/assets/${articleData.imgId}?access_token=tB7F-mUWmn1dxWECof7Jnq7G_SfXUqreWmM6oG4KvK8`
-          );
-          const imageData = await cmsResponse.json();
-          const url = imageData.fields.file.url;
-          setCmsUrl(url);
-        }
-      } catch (error) {
-        console.error("Error fetching image data:", error);
-      } 
-    };
-    fetchCmsUrl();
-  }, [articleData]);
 
   const getTitleClass = () => {
     let titleClass = '';
@@ -59,7 +48,7 @@ const Spotlight = ({ data, className }) => {
         <>
         <h2 className={getTitleClass()} onClick={handleNavigation}>{articleData.title}</h2>
         <div className={styles.imageWrap}>
-          <img src={cmsUrl} className={styles.image} alt="" onClick={handleNavigation}/>
+          <img src={formatedCmsUrl} className={styles.image} alt="" onClick={handleNavigation} loading="lazy"/>
         </div>
           <Divider className={styles.divider}/>
           </>

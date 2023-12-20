@@ -9,10 +9,9 @@
   }
 
 .header{
-  width: 100%;
-  max-width: 1200px;
-  height: 10vh;
-    min-height: 50px;
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
     max-height: 60px;
     display: flex;
     justify-content: space-between;
@@ -23,25 +22,13 @@
     transition: font-size 300ms ease;
 }
 
-.sidebarIconToggle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#span{
-    width: 36px;
-}
 
-input[type="checkbox"]:checked ~ .sidebarIconToggle .menuClose {
+input[type="checkbox"]:checked ~ .header > .sidebarIconToggle .menuClose {
     display: block;
   }
 
-  input[type="checkbox"]:checked ~ .sidebarIconToggle .menu {
+  input[type="checkbox"]:checked ~ .header >.sidebarIconToggle .menu {
     display: none;
-  }
-
-  .sidebarIconToggle{
-    /* border: red solid 1px; */
   }
 
 @media (max-width: 500px){

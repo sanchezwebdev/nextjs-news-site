@@ -1,16 +1,18 @@
-import React from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import styles from "../styles/Header.module.css";
 
-const Header = () => {
+const Header = ({ isChecked, onCheckboxChange }) => {
+
   return (
-    <>
-      <header className={styles.header}>
+    <>  
         <input
-          type="checkbox"
-          className={styles.openSidebarMenu}
-          id="openSidebarMenu"
-        />
+        type="checkbox"
+        className={styles.openSidebarMenu}
+        id="openSidebarMenu"
+        checked={isChecked}
+        onChange={(e) => onCheckboxChange(e.target.checked)}
+      />
+      <header className={styles.header}>
         <span id={styles.span}></span>
         <div className={styles.title}>The Temecula Tribune</div>
         <label htmlFor="openSidebarMenu" className={styles.sidebarIconToggle}>
@@ -18,6 +20,7 @@ const Header = () => {
           <IoClose className={styles.menuClose} id="menuClose"/>
         </label>
       </header>
+
     </>
   );
 };
