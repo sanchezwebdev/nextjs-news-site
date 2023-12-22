@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
 import dynamic from "next/dynamic";
 import Menu from "../components/Menu";
 import Header from "../components/Header";
@@ -18,6 +19,7 @@ import styles from "../styles/Home.module.css";
 import Divider from '@mui/material/Divider';
 
 export default function Home({ articles }) {
+  const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const scrollY = useScrollPosition();
   const dynamicMarginTop = Math.max(60 - scrollY, 0); 
@@ -33,6 +35,21 @@ export default function Home({ articles }) {
   useEffect(() => {
     toggleBodyScroll(isChecked);
   }, [isChecked]);
+
+  useEffect(() => {
+    toggleBodyScroll(isChecked);
+  }, [isChecked]);
+  
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsChecked(false);
+    };
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router]);
+
 
   return (
     <div className={styles.body}>
@@ -125,12 +142,12 @@ export async function getStaticProps() {
   try {
     const data = await fetchData();
     const registerData = await fetchRegister();
+    const homeRegister = registerData.count.find(document => document.category ==='home');
     const positions = ["headline", "featured1", "featured2", "featured3", "featured4", "featured5", "trending1", "trending2", "trending3", "trending4", "trending5", "trending6", "spotlight1", "spotlight2", "spotlight3", "additional1", "additional2", "additional3", "additional4", "additional5", "additional6", "additional7", "additional8", "additional9", "additional10", "additional11", "additional12"];
     const articles = {};
 
     for (const position of positions) {
-      const register = registerData.count[0];
-      const articleData = data.count.find(article => article._id === register[position]);
+      const articleData = data.count.find(article => article._id === homeRegister[position]);
       articles[position] = articleData;
 
       if (articleData && articleData.imgId) {

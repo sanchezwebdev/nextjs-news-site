@@ -39,12 +39,14 @@
     .divider {
         grid-area: divider;
         display: block;
-        margin: 2% 0 0 0;
+        padding: 2% 0 0 0; 
+        margin: 0;
     }
 
     .title {
         grid-area: title;
         font-size: 14px;
+        padding: 0 2%;
     }
 
     .description {

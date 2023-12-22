@@ -8,13 +8,6 @@ const Article = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const router = useRouter();
 
-  const handleNavigation = () => {
-    if (articleData && articleData.title) {
-      const slug = createSlug(articleData.title);
-      router.push(`/${slug}`);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,7 +20,14 @@ const Article = ({ data, className }) => {
     fetchData();
   }, [data]);
 
-
+  const handleNavigation = () => {
+    if (articleData && articleData.title) {
+      const titleSlug = createSlug(articleData.title);
+      const categorySlug = createSlug(articleData.category);
+      router.push(`/${categorySlug}/${titleSlug}`);
+    }
+  };
+  
   return (
     <div className={`${styles.container} ${className}`}>
       {articleData && (

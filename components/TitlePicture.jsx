@@ -25,8 +25,9 @@ const TitlePicture = ({ data, className }) => {
   
   const handleNavigation = () => {
     if (articleData && articleData.title) {
-      const slug = createSlug(articleData.title);
-      router.push(`/${slug}`);
+      const titleSlug = createSlug(articleData.title);
+      const categorySlug = createSlug(articleData.category);
+      router.push(`/${categorySlug}/${titleSlug}`);
     }
   };
 
