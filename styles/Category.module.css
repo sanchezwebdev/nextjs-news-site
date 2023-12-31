@@ -1,76 +1,193 @@
-.body{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-.containerMain{
-    height: 100%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 1% 5%;
+.body {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  width: 100%;
 }
 
-.header{
-    color: red;
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 1% 5%;
 }
-.p{
-    color: red;
+
+.overlayActive {
+  position: fixed;
+  margin-top: 60px;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  opacity: .5;
+  z-index: 500;
+  background-color: gray;
+  transition: opacity 300ms ease;
 }
 
-.overlayActive{
-    margin-top: 60px;
-    position: fixed;
-    max-width: 1200px;
-    width: 90%;
-    height: 100%;
-    background-color: gray;
-    opacity: .5;
-    z-index: 500;
-    transition: opacity 300ms ease;
-  }
-  
-  .overlayInactive{
-    margin-top: 60px;
-    position: fixed;
-    max-width: 1200px;
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 300ms ease;
+.overlayInactive {
+  position: fixed;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  background-color: gray;
+  transition: opacity 300ms ease;
+}
+
+.headerDivider {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.cardsContainer {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.cardMainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+.cardMain {
+  width: 100%;
+  margin: 5% 0;
+  transition: margin .5s ease;
+}
+
+.cardSecondaryContainer {
+  margin-top: 5%;
+}
+
+@media(min-width:500px) {
+  .cardSecondaryContainer {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "cs1 cs2"
+      "cs3 cs4"
+      "cs5 cs5"
+      "cs6 cs6"
+      "cs7 cs8"
+      "cs9 cs10"
+      "cs11 cs11"
+      "cs12 cs12";
   }
 
-  .headerDivider{
-    width: 90%;
-    max-width: 1200px;
+  .cardsContainer {
+    margin: 2% 0;
   }
 
-  .cardContainer{
-    margin-top: 2%;
-    position: relative;
-    width: 100%;
+  .cardMain {
+    margin: 2% 0;
   }
 
-  .cardMainContainer{
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
+}
+
+@media(min-width:740px) {
+
+  .cardMainContainer {
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 10px;
+    grid-template-areas:
+      "cm1 cm2"
+      "cm3 cm3"
+      "cm4 cm5";
+  }
+
+  .cardMain3 {
     align-items: center;
-
+    justify-content: flex-start;
+    height: auto;
   }
 
-  .cardMain{
-    width: 100%;
+  .cardSecondaryContainer {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "cs1 cs2 cs3"
+      "cs4 cs5 cs5"
+      "cs6 cs6 cs7"
+      "cs8 cs9 cs10"
+      "cs11 cs11 cs12";
+  }
+
+  .cardMain {
+    margin: 0;
+    transition: margin .5s ease;
+  }
+}
+
+@media(min-width:1000px) {
+
+  .cardMainContainer {
+    height: auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+      "cm1 cm2 cm3 cm4 cm5"
+  }
+
+  .cardSecondaryContainer {
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(60, auto);
+    grid-template-areas:
+      "cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs1 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs2 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3 cs3"
+      "cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs4 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs5 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs6 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7 cs7"
+      "cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs8 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs9 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs10 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs11 cs12 cs12 cs12 cs12 cs12 cs12 cs12 cs12 cs12 cs12 cs12 cs12";
+  }
+
+  .cardMain {
     height: 100%;
+    margin: 2% 0 0 0;
+    transition: margin .5s ease;
   }
 
+  .cardMain3 {
+    align-items: center;
+    justify-content: space-between;
+  }
 
+}
+
+.cardMain1 { grid-area: cm1; }
+.cardMain2 { grid-area: cm2; }
+.cardMain3 { grid-area: cm3; }
+.cardMain4 { grid-area: cm4; }
+.cardMain5 { grid-area: cm5; }
+.cardSecondary1 { grid-area: cs1; }
+.cardSecondary2 { grid-area: cs2; }
+.cardSecondary3 { grid-area: cs3; }
+.cardSecondary4 { grid-area: cs4; }
+.cardSecondary5 { grid-area: cs5; }
+.cardSecondary6 { grid-area: cs6; }
+.cardSecondary7 { grid-area: cs7; }
+.cardSecondary8 { grid-area: cs8; }
+.cardSecondary9 { grid-area: cs9; }
+.cardSecondary10 { grid-area: cs10; }
+.cardSecondary11 { grid-area: cs11; }
+.cardSecondary12 { grid-area: cs12; }
+.footer { grid-area: footer; }

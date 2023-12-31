@@ -1,39 +1,45 @@
-import {React, useState, useEffect} from 'react'
+import React from 'react';
 import { useRouter } from 'next/router';
-import styles from '../../styles/CardSecondary.module.css'
+import createSlug from '../../helpers/slug';
+import styles from "../../styles/CardSecondary.module.css";
+import { Divider } from "@mui/material";
 
-const CardSecondary = ({data}) => {
-    const router = useRouter();
-    const [articleData, setArticleData] = useState(null);
-    const formatedCmsUrl = data && data.cmsUrl 
-    ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
-    : null;
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const resolvedData = await data;
-          setArticleData(resolvedData);
-        } catch (error) {
-          console.error("Error fetching article data:", error);
-        }
-      };
-      fetchData();
-    }, [data]);
-    
-    const handleNavigation = () => {
-      if (articleData && articleData.title) {
-        const titleSlug = createSlug(articleData.title);
-        const categorySlug = createSlug(articleData.category);
-        router.push(`/${categorySlug}/${titleSlug}`);
-      }
-    };
+const CardSecondary = ({ data, className }) => {
+  if (!data) {
+    return null;
+  }
+
+  const router = useRouter();
+  let titleClass = styles.title;
+  let imageClass = styles.image;
+  let descriptionClass = styles.description;
+  const combinedClassName = `${styles.containerSecondary} ${className}`;
+
+  for (let i = 1; i <= 12; i++) {
+    if (className.includes(`cardSecondary${i}_`)) {
+      titleClass = `${styles[`title${i}`] || ''} ${styles.title}`;
+      imageClass = `${styles[`image${i}`] || ''} ${styles.image}`;
+      descriptionClass = `${styles[`description${i}`] || ''} ${styles.description}`;
+      break; 
+    }
+  }
+
+  const handleNavigation = () => {
+    if (data.title) {
+      const titleSlug = createSlug(data.title);
+      const categorySlug = createSlug(data.category);
+      router.push(`/${categorySlug}/${titleSlug}`);
+    }
+  };
 
   return (
-    <div className={styles.containerMain}>
-      secondary
+    <div className={combinedClassName} onClick={handleNavigation}>
+      <img src={data.imgUrl} alt={data.title} className={imageClass} onClick={handleNavigation} />
+      <div className={titleClass} onClick={handleNavigation}>{data.title}</div>
+      <div className={descriptionClass} onClick={handleNavigation}>{data.description}</div>
+      <Divider className={styles.cardDivider}/>
     </div>
-  )
-}
+  );
+};
 
-export default CardSecondary
+export default CardSecondary;

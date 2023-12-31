@@ -1,176 +1,117 @@
 .menu {
-    z-index: -1;
-    overflow: hidden;
-    position: fixed;
-    margin-left: 5%;
-    margin-right: 5%;
-    max-width: 1205px;
-    width: 95%; 
-    height: 100%;
-    transition: z-index 350ms;
-  }
-  
-.menuClose{
-    display: none;
-  }
+  z-index: -1;
+  overflow: hidden;
+  position: fixed;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-width: 1205px;
+  width: 95%;
+  height: 100%;
+  transition: z-index 350ms;
+}
 
-  .openSidebarMenu{
-    display: none;
-  }
+.menuClose {
+  display: none;
+}
+
+.openSidebarMenu {
+  display: none;
+}
 
 .sidebarMenu {
-    z-index: 200;
-    font-size: 12px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    height: 100%;
-    max-height: 100vh;
-    right: 0;
-    position: absolute;
-    width: 150px;
-    transform: translateX(150px);
-    transition: transform 350ms ease-in-out;
-    background: black;
-  }
-  .sidebarActive {
-    z-index: 1000;
-    font-size: 12px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    height: 100%;
-    right: 0;
-    position: absolute;
-    width: 150px;
-    transform: translateX(0);
-    transition: transform 350ms ease-in-out;
+  z-index: 200;
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  height: 100%;
+  max-height: 100vh;
+  right: 0;
+  position: absolute;
+  width: 150px;
+  transform: translateX(150px);
+  transition: transform 350ms ease-in-out;
+  background: black;
+}
+
+.sidebarActive {
+  position: absolute;
+  height: 100%;
+  width: 150px;
+  right: 0;
+  z-index: 1000;
+  font-size: 12px;
+  background: black;
+  transform: translateX(0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  transition: transform 350ms ease-in-out, width 1000ms ease-in-out, font-size 350ms ease-in-out;
+}
+
+.sidebarMenuInner li {
+  width: 100%;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1.5vh 5%;
+  cursor: pointer;
+  color: #fff;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  transition: padding 350ms ease;
+}
+
+.customLink {
+  width: 100%;
+  opacity: 1;
+  z-index: 100;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.sidebarIconToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#span {
+  width: 36px;
+}
+
+.menuActive {
+  z-index: 1000;
+  overflow: hidden;
+  position: fixed;
+  margin: 65px 5% 0 5%;
+  max-width: 1205px;
+  width: 95%;
+  height: 100%;
+}
+
+.noTransition {
+  transition: none !important;
+}
+
+.sidebarMenuInner li:first-child {
+  padding: 0;
+  transition: padding 350ms ease;
+}
+
+@media (min-width: 500px) {
+
+  .sidebarMenu {
+    font-size: 16px;
+    transform: translateX(250px);
+    width: 250px;
     background: black;
   }
 
   .sidebarMenuInner li {
-    width: 100%;
-    list-style: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 1.5vh 5%;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-    
+    padding: 2vh 5%;
+    transition: padding 350ms ease;
   }
 
-  .customLink{
-    width: 100%;
-    opacity: 1;
-    z-index: 100;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
+  .sidebarActive {
+    font-size: 16px;
+    width: 250px;
+    transition: transform 350ms ease-in-out, width 1000ms ease-in-out, font-size 350ms ease-in-out;
   }
-  .sidebarIconToggle{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  #span{
-      width: 36px;
-  }
-  
-
-
-  .menuActive {
-    z-index: 1000;
-    overflow: hidden;
-    position: fixed;
-    margin: 60px 5% 0 5%;
-    max-width: 1205px;
-    width: 95%; 
-    height: 100%;
-  }
-
-
-  @media (min-width: 740px){
-
-    .menu {
-      z-index: -1;
-      overflow: hidden;
-      position: fixed;
-      margin-left: 5%;
-      margin-right: 5%;
-      max-width: 1205px;
-      width: 95%; 
-      height: 100%;
-      transition: z-index 350ms;
-    }
-    
-  .menuClose{
-      display: none;
-    }
-  
-    .openSidebarMenu{
-      display: none;
-    }
-  
-  .sidebarMenu {
-      z-index: 200;
-      font-size: 16px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      height: 100%;
-      max-height: 100vh;
-      right: 0;
-      position: absolute;
-      width: 250px;
-      transform: translateX(250px);
-      transition: transform 350ms ease-in-out;
-      background: black;
-    }
-  
-    .sidebarMenuInner li {
-      width: 100%;
-      list-style: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 2vh 5%;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-      
-    }
-  
-    .customLink{
-      width: 100%;
-      opacity: 1;
-      z-index: 100;
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-    }
-    .sidebarIconToggle{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #span{
-        width: 36px;
-    }
-    
-    .sidebarActive {
-      z-index: 1000;
-      font-size: 16px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      height: 100%;
-      right: 0;
-      position: absolute;
-      width: 250px;
-      transform: translateX(0);
-      transition: transform 350ms ease-in-out;
-      background: black;
-    }
-  
-    .menuActive {
-      z-index: 1000;
-      overflow: hidden;
-      position: fixed;
-      margin: 60px 5% 0 5%;
-      max-width: 1205px;
-      width: 95%; 
-      height: 100%;
-    }
-  }
+}

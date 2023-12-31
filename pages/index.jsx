@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from 'next/router';
-import dynamic from "next/dynamic";
+import fetchRegister from "../api/fetchRegister";
+import fetchData from '../api/fetchData'
+import useDeviceSize from '../helpers/useDeviceSize';
+import useScrollPosition from '../helpers/useScroll';
+import toggleBodyScroll from '../helpers/toggleBodyScroll';
 import Menu from "../components/Menu";
 import Header from "../components/Header";
 import Article from "../components/Article";
@@ -10,11 +14,6 @@ import Trending from "../components/Trending";
 import Spotlight from "../components/Spotlight";
 import TitlePicture from "../components/TitlePicture";
 import Footer from "../components/Footer";
-import useDeviceSize from '../helpers/useDeviceSize';
-import useScrollPosition from '../helpers/useScroll';
-import fetchRegister from "../api/fetchRegister";
-import fetchData from '../api/fetchData'
-import toggleBodyScroll from '../helpers/toggleBodyScroll';
 import styles from "../styles/Home.module.css";
 import Divider from '@mui/material/Divider';
 
@@ -35,10 +34,6 @@ export default function Home({ articles }) {
   useEffect(() => {
     toggleBodyScroll(isChecked);
   }, [isChecked]);
-
-  useEffect(() => {
-    toggleBodyScroll(isChecked);
-  }, [isChecked]);
   
   useEffect(() => {
     const handleRouteChange = () => {
@@ -54,8 +49,7 @@ export default function Home({ articles }) {
   return (
     <div className={styles.body}>
         <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px` }}></div>
-        <Menu isChecked={isChecked} className={menuClassName}/>
-      
+        <Menu isChecked={isChecked} className={menuClassName}/> 
         <Header isChecked={isChecked} onCheckboxChange={handleCheckboxChange} />
         <Divider style={{ marginBottom: '1px' }} className={styles.headerDivider}/>
         <Divider className={styles.headerDivider}/>

@@ -1,4 +1,4 @@
-.containerFooter{
+.containerFooter {
     display: flex;
     justify-content: center;
     color: white;
@@ -8,10 +8,11 @@
     margin-top: 10%;
 }
 
-.divider{
-    background-color:white;
+.divider {
+    background-color: white;
 }
-.siteName{
+
+.siteName {
     font-size: 28px;
     font-family: 'Chomsky'
 }
@@ -27,33 +28,94 @@
     align-items: center;
 }
 
-.social{
+.advertise,
+.careers,
+.about {
+    font-size: 16px;
+}
+
+.advertise:hover,
+.careers:hover,
+.about:hover {
+    cursor: pointer;
+}
+
+.social {
     width: 100%;
     max-width: 600px;
     display: flex;
     justify-content: space-around;
 }
 
-.copyright{
+.copyright {
     font-size: 10px;
 }
-.icon{
-    font-size:xx-large;
-}
-@media(min-width: 740px){
-.siteName{
-    margin-left: 5%;
-    font-size: 32px;
-    width: 100%;
-    align-self: flex-start;
+
+.icon {
+    font-size: xx-large;
 }
 
+.icon:hover {
+    cursor: pointer;
 }
-@media(min-width: 1000px){
-.siteName{
-    font-size: 36px;
+
+.box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 400px;
+    height: 15%;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 24;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    transition: font-size .5s ease, height .5s ease;
 }
-.innerFooter{
-    margin: 5% 0;
+
+@media(min-width: 550px) {
+    .box {
+        height: 20%;
+        font-size: 36px;
+        transition: font-size .5s ease, height .5s ease;
+    }
 }
+
+@media(min-width: 740px) {
+    .siteName {
+        margin-left: 5%;
+        font-size: 32px;
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .advertise,
+    .careers,
+    .about {
+        font-size: 20px;
+    }
+
+}
+
+@media(min-width: 1000px) {
+    .siteName {
+        font-size: 36px;
+    }
+
+    .innerFooter {
+        margin: 5% 0;
+    }
+
+    .advertise,
+    .careers,
+    .about {
+        font-size: 24px;
+    }
 }

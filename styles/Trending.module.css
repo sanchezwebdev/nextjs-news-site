@@ -5,9 +5,9 @@
     margin-top: 5%;
 }
 .image {
+    object-fit: cover;
     height: 100%;
     width: 100%;
-    object-fit: cover;
 }
 .title:hover,
 .image:hover,
@@ -36,27 +36,27 @@
     }
 
     .divider {
-        grid-area: divider;
         display: block;
         padding: 2% 0;
         margin: 0;
+        grid-area: divider;
     }
 
     .title {
-        grid-area: title;
         font-size: 18px;
         padding-right: 10%;
+        grid-area: title;
     }
 
     .description {
-        grid-area: description;
         font-size: 16px;
         padding-right: 10%;
+        grid-area: description;
     }
 
     .image {
-        grid-area: image;
         max-height: 100px;
+        grid-area: image;
 
     }
 }

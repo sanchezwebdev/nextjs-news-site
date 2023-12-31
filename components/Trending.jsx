@@ -7,9 +7,20 @@ import { useRouter } from 'next/router'
 const Trending = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setWidth(window.innerWidth);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   const formatedCmsUrl = data && data.cmsUrl 
-  ? `${data.cmsUrl}?fm=webp&w=500&h=300`
-  : null;
+    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    : null;
   
   useEffect(() => {
     const fetchData = async () => {

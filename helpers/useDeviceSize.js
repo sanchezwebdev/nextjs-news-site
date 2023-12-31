@@ -7,10 +7,8 @@ const useDeviceSize = () => {
     }
   
     useEffect(() => {
-      // component is mounted and window is available
       handleWindowResize();
       window.addEventListener('resize', handleWindowResize);
-      // unsubscribe from the event on component unmount
       return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
   

@@ -1,26 +1,29 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .title:hover,
 .image:hover,
-.description:hover{
+.description:hover {
     cursor: pointer;
 }
+
 .image {
+    object-fit: cover;
     height: 100%;
     width: 100%;
-    object-fit: cover;
 }
+
 .description {
     margin: 2% 0;
 }
 
 @media(min-width: 740px) {
-    .container{
+    .container {
         align-items: baseline;
         min-height: 100%;
     }
-    
+
 }

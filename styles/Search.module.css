@@ -1,0 +1,192 @@
+.body {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.overlayActive {
+  position: fixed;
+  margin-top: 60px;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  opacity: .5;
+  z-index: 500;
+  background-color: gray;
+  transition: opacity 300ms ease;
+}
+
+.overlayInactive {
+  position: fixed;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  background-color: gray;
+  transition: opacity 300ms ease;
+}
+
+.headerDivider {
+  max-width: 1200px;
+}
+
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: black;
+  height: 100%;
+  width: 90%;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.pageTitle {
+  align-self: center;
+  text-wrap: wrap;
+}
+
+.containerResults {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 5%;
+  height: 100%;
+  width: 90%;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.resultDivider {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.description {
+  padding: 5% 0;
+}
+
+.icon {
+  font-size: xx-large;
+}
+
+.input {
+  background-color: white;
+  color: black;
+  height: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin: 5%;
+  margin-right: 2%;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  caret-color: black;
+  padding-left: 5px;
+}
+
+.button {
+  margin-right: 5%;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionDivider {
+  align-self: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media(min-width: 500px) {
+  .result {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: auto 30%;
+    grid-template-areas:
+      "title image"
+      "description image"
+      ". image"
+      ". image"
+      "resultDivider resultDivider"
+  }
+
+  .title {
+    grid-area: title
+  }
+
+  .image {
+    grid-area: image;
+    height: 100%
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .resultDivider {
+    grid-area: resultDivider;
+  }
+
+  .result {
+    margin-top: 20px;
+  }
+
+}
+
+@media(min-width: 740px) {
+
+  .icon {
+    font-size: xxx-large;
+  }
+
+  .input {
+    margin-right: 2%;
+  }
+
+  .pageTitle {
+    align-self: center;
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .description {
+    padding-top: 10px;
+    font-size: 18px;
+  }
+
+  .containerResults {
+    margin-top: 2%;
+  }
+}

@@ -1,55 +1,56 @@
-.body{
-  width: 100%;
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2%;
+  width: 100%;
 }
-.overlayActive{
-  margin-top: 60px;
+
+.overlayActive,
+.overlayInactive {
   position: fixed;
-  max-width: 1200px;
+  margin-top: 60px;
   width: 90%;
+  max-width: 1200px;
   height: 100%;
-  background-color: gray;
   opacity: .5;
   z-index: 500;
+  background-color: gray;
   transition: opacity 300ms ease;
 }
 
-.overlayInactive{
-  margin-top: 60px;
-  position: fixed;
-  max-width: 1200px;
+.overlayInactive {
   width: 100%;
-  height: 100%;
   background-color: gray;
   z-index: -1;
   opacity: 0;
-  transition: opacity 300ms ease;
 }
 
-.headerDivider{
+.headerDivider {
   max-width: 1200px;
 }
 
-.trendingTitle, 
+.trendingTitle,
 .spotlightTitle,
 .topTitle,
-.additionalTitle{
+.additionalTitle {
   margin: 3% 0 0 0;
   color: gray;
   opacity: .5;
-  align-self: flex-start; 
+  align-self: flex-start;
   font-size: large;
 }
-.additionalTitle{
+
+.additionalTitle {
   margin-bottom: 2%;
 }
-.vDivider{
+
+.vDivider {
   display: none;
 }
+
 .containerMain {
-max-width: 1200px;
+  max-width: 1200px;
   margin: 2% 5%;
 }
 
@@ -58,104 +59,105 @@ max-width: 1200px;
 .containerTrending,
 .containerSpotlight,
 .containerAdditional,
-.containerMain{
+.containerMain {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 }
 
-@media (min-width: 740px){
-
-  .header{
+@media (min-width: 740px) {
+  .header {
     height: 200px;
   }
 
-.topTitle{
-  display: none;
-}
-.containerMain{
-  position: relative;
-  display: grid;
-  justify-items: center;
-  margin: 1% 5% 0 5%;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas:
-  "cTop"
-  "trending"
-  "spotlight"
-  "additional"
-}
-.containerTop{
-  display: grid;
-  grid-template-columns: 60% auto 40%;
-  grid-template-rows: 100%;
-  grid-template-areas: 
-  "headline vDivider featured"
-}
-.containerHeadline{
-  margin-right: 3%;
-}
-.containerFeatured{
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(5, 20%);
-  grid-template-areas:
-  "featured1"
-  "featured2"
-  "featured3"
-  "featured4"
-  "featured5";
-  margin-left: 5%;
-}
+  .topTitle {
+    display: none;
+  }
 
-.containerTrending{
-  display: grid;
-  grid-column-gap: 5%;
-  grid-template-columns: auto auto;
-  grid-template-rows: 10% repeat(3, minmax(150px, 30%));
-  grid-template-areas:
-  "trendingTitle trendingTitle"
-  "trending1 trending4"
-  "trending2 trending5"
-  "trending3 trending6";
-  justify-content: center;
-}
+  .containerMain {
+    display: grid;
+    justify-items: center;
+    margin: 1% 5% 0 5%;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "cTop"
+      "trending"
+      "spotlight"
+      "additional"
+  }
 
-.containerSpotlight{
-  margin-top: 3%;
-  display: grid;
-  grid-gap: 3%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-  "slT . ."
-  "sl1 sl2 sl3";
-}
-.containerAdditional{
-  grid-gap: 1%;
-  width: 100%;
-  margin-top: 3%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-template-areas:
-  "at at at at"
-  "additional1 additional2 additional3 additional4"
-  "additional5  additional6 additional7 additional8"
-  "additional9 additional10 additional11 additional12";
-}
+  .containerTop {
+    display: grid;
+    grid-template-columns: 60% auto 40%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+      "headline vDivider featured"
+  }
 
-.vDivider{
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  max-height: 450px;
-  display: block;
-}
+  .containerHeadline {
+    margin-right: 3%;
+  }
 
+  .containerFeatured {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-areas:
+      "featured1"
+      "featured2"
+      "featured3"
+      "featured4"
+      "featured5";
+    margin-left: 5%;
+  }
 
-.containerHeadline {grid-area: headline;}
+  .containerTrending {
+    display: grid;
+    grid-column-gap: 5%;
+    grid-template-columns: auto auto;
+    grid-template-rows: 10% repeat(3, minmax(150px, 30%));
+    grid-template-areas:
+      "trendingTitle trendingTitle"
+      "trending1 trending4"
+      "trending2 trending5"
+      "trending3 trending6";
+    justify-content: center;
+  }
+
+  .containerSpotlight {
+    display: grid;
+    margin-top: 3%;
+    grid-gap: 3%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "slT . ."
+      "sl1 sl2 sl3";
+  }
+
+  .containerAdditional {
+    display: grid;
+    margin-top: 3%;
+    grid-gap: 1%;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "at at at at"
+      "additional1 additional2 additional3 additional4"
+      "additional5  additional6 additional7 additional8"
+      "additional9 additional10 additional11 additional12";
+  }
+
+  .vDivider {
+    display: block;
+    justify-content: center;
+    align-self: center;
+    max-height: 450px;
+  }
+
+  .containerHeadline {grid-area: headline;}
 .containerFeatured{grid-area: featured}
 .containerTrending{grid-area: trending}
 .containerSpotlight{grid-area: spotlight}
@@ -204,5 +206,3 @@ max-width: 1200px;
 .spotlight1{}
 .spotlight2{}
 .spotlight3{}
-
-

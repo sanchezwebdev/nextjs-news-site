@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Featured.module.css";
 import Divider from '@mui/material/Divider';
-import createSlug from "../helpers/slug"
-import { useRouter } from 'next/router'
+import createSlug from "../helpers/slug";
+import { useRouter } from 'next/router';
 
 const Featured = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setWidth(window.innerWidth);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   const formatedCmsUrl = data && data.cmsUrl 
-  ? `${data.cmsUrl}?fm=webp&w=300&h=200`
-  : null;
+    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +52,6 @@ const Featured = ({ data, className }) => {
           <Divider className={styles.divider}/>
         </>
       )}
-      
     </div>
   );
 };

@@ -1,14 +1,16 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
 }
+
 .title:hover,
 .image:hover,
-.description:hover{
+.description:hover {
     cursor: pointer;
 }
+
 .image {
     height: 100%;
     width: 100%;
@@ -33,13 +35,13 @@
             "title image"
             ". image"
             "divider divider";
-            justify-items: center;
+        justify-items: center;
     }
 
     .divider {
         grid-area: divider;
         display: block;
-        padding: 2% 0 0 0; 
+        padding: 2% 0 0 0;
         margin: 0;
     }
 
@@ -63,7 +65,7 @@
 }
 
 @media(min-width: 1000px) {
-       .container {
+    .container {
         display: grid;
         grid-template-columns: 70% 30%;
         grid-template-rows: repeat(3, auto);
@@ -71,17 +73,21 @@
             "title image"
             "description image"
             "divider divider";
-            justify-items: center;
-            
+        justify-items: center;
+
     }
-    .title{
+
+    .title {
         font-size: 16px;
     }
+
     .description {
         display: block;
     }
-    .title, .description{
+
+    .title,
+    .description {
         padding: 0 5%;
-    }   
-    
+    }
+
 }

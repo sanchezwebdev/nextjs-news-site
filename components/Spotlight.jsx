@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router'
 import styles from "../styles/Spotlight.module.css";
 import Divider from '@mui/material/Divider';
 import createSlug from "../helpers/slug"
-import { useRouter } from 'next/router'
 
 const Spotlight = ({ data, className }) => {
   const router = useRouter();
@@ -31,11 +31,8 @@ const Spotlight = ({ data, className }) => {
     }
   };
 
-
   const getTitleClass = () => {
     let titleClass = '';
-
-    // Checking className for specific conditions
     if (className === 'Home_spotlight1__ic7om') {titleClass += ` ${styles.s1Title}`;}
     if (className === 'Home_spotlight2__MfRih') {titleClass += ` ${styles.s2Title}`;}
     if (className === 'Home_spotlight3__vvfhJ') {titleClass += ` ${styles.s3Title}`;}
@@ -54,7 +51,6 @@ const Spotlight = ({ data, className }) => {
           <Divider className={styles.divider}/>
           </>
       )}
-      
     </div>
   );
 };

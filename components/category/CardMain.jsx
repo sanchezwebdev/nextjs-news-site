@@ -1,40 +1,40 @@
-import { React, useState, useEffect } from "react";
-// import { useRouter } from 'next/router';
+import { React } from "react";
+import { useRouter } from 'next/router';
+import createSlug from '../../helpers/slug'
 import styles from "../../styles/CardMain.module.css";
+import { Divider } from "@mui/material";
 
-const CardMain = ({ data }) => {
-  console.log(data);
-  // const router = useRouter();
-  // const [articleData, setArticleData] = useState(null);
-  // const formatedCmsUrl = data && data.cmsUrl
-  // ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
-  // : null;
+const CardMain = ({ data, className }) => {
+    if (!data) {
+        return null; 
+    }
+  
+  const router = useRouter();
+  let titleClass = styles.title;
+  let imageClass = styles.image;
+  let descriptionClass = styles.description;
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const resolvedData = await data;
-  //       setArticleData(resolvedData);
-  //     } catch (error) {
-  //       console.error("Error fetching article data:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [data]);
+  for (let i = 1; i <= 12; i++) {
+    if (className.includes(`cardMain${i}`)) {
+      titleClass = `${styles[`title${i}`] || ''} ${styles.title}`;
+      imageClass = `${styles[`image${i}`] || ''} ${styles.image}`;
+      descriptionClass = `${styles[`description${i}`] || ''} ${styles.description}`;
+      break; 
+    }
+  }
 
   const handleNavigation = () => {
-    if (articleData && articleData.title) {
-      const titleSlug = createSlug(articleData.title);
-      const categorySlug = createSlug(articleData.category);
+      const titleSlug = createSlug(data.title);
+      const categorySlug = createSlug(data.category);
       router.push(`/${categorySlug}/${titleSlug}`);
-    }
   };
-
+  const combinedClassName = `${styles.containerMain} ${className}`;
   return (
-    <div className={styles.containerMain}>
-      <div className={styles.title}>{data.title}</div>
-      <img src={data.imgUrl} alt="" className={styles.image} />
-      <div className={styles.description}>{data.description}</div>
+    <div className={combinedClassName} >
+      <img src={data.imgUrl} alt="" className={imageClass}onClick={handleNavigation} />
+      <div className={titleClass}onClick={handleNavigation}>{data.title}</div>
+      <div className={descriptionClass}onClick={handleNavigation}>{data.description}</div>
+      <Divider className={styles.cardDivider}/>
     </div>
   );
 };

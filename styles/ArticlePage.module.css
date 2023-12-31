@@ -1,0 +1,144 @@
+.body {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerDivider {
+    max-width: 1200px;
+}
+
+.overlayActive {
+    margin-top: 60px;
+    position: fixed;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    opacity: .5;
+    z-index: 500;
+    background-color: gray;
+    transition: opacity 300ms ease;
+}
+
+.overlayInactive {
+    margin-top: 60px;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    background-color: gray;
+    transition: opacity 300ms ease;
+}
+
+.containerMain {
+    overflow: hidden;
+    margin-top: 3%;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.title {
+    font-size: 24px;
+    transition: font-size .5s ease;
+}
+
+.description {
+    padding: 5% 0;
+    transition: font-size .5s ease
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    grid-area: image;
+    transition: max-height .5s ease, width .5s ease;
+}
+
+.content {
+    margin-top: 5%;
+    padding: 3%;
+    grid-area: cntnt;
+    text-align: justify;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas:
+        "image"
+        "cntnt";
+}
+
+@media(min-width: 450px) {
+    .description {
+        font-size: 24px;
+        padding: 3% 0;
+        transition: font-size .5s ease
+    }
+
+    .title {
+        font-size: 28px;
+        transition: font-size .5s ease
+    }
+
+    .content {
+        margin-top: 3%;
+        padding: 2%;
+        font-size: 18px;
+    }
+}
+
+@media(min-width: 740px) {
+    .grid {
+        display: block;
+        padding: 2%;
+    }
+
+    .image {
+        float: right;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        width: 40vw;
+        min-height: 250px;
+        max-height: 600px;
+        transition: max-height .5s ease, width .5s ease;
+    }
+
+    .content {
+        width: auto;
+        font-size: 18px;
+        margin: 0;
+        text-wrap: wrap;
+    }
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media(min-width: 1000px) {
+
+    .title,
+    .description {
+        max-width: 1000px;
+    }
+
+    .description {
+        padding: 1%;
+    }
+
+    .image {
+        margin-left: 3%;
+        margin-bottom: 10px;
+        width: 35vw;
+        max-height: 600px;
+        transition: max-height .5s ease, width .5s ease;
+    }
+
+}

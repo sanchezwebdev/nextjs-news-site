@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router'
 import styles from "../styles/TitlePicture.module.css";
 import Divider from '@mui/material/Divider';
 import createSlug from "../helpers/slug.js"
-import { useRouter } from 'next/router'
 
 const TitlePicture = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
+  const [width, setWidth] = useState(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setWidth(window.innerWidth);
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   const formatedCmsUrl = data && data.cmsUrl 
-  ? `${data.cmsUrl}?fm=webp&w=500&h=300`
-  : null;
+    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +41,6 @@ const TitlePicture = ({ data, className }) => {
       router.push(`/${categorySlug}/${titleSlug}`);
     }
   };
-
 
   return (
     <div className={`${styles.container} ${className}`}>
