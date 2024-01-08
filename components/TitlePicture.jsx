@@ -19,7 +19,7 @@ const TitlePicture = ({ data, className }) => {
   }, []);
 
   const formatedCmsUrl = data && data.cmsUrl 
-    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    ? `${data.cmsUrl}?fm=webp&w=1500&h=750`
     : null;
 
   useEffect(() => {

@@ -63,8 +63,9 @@
 }
 
 .pageTitle {
-  align-self: center;
   text-wrap: wrap;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .containerResults {
@@ -188,5 +189,11 @@
 
   .containerResults {
     margin-top: 2%;
+  }
+}
+
+@media(min-width: 1200px){
+  .containerSearch{
+    width: 100%;
   }
 }

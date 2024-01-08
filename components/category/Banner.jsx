@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import {useRouter} from 'next/router'
 import styles from '../../styles/Banner.module.css';
 
 const Banner = ({ data }) => {
-  let titleClass = styles.title; 
+
+  let titleClass = styles.title;
   let imageClass;
 
   switch (data.headerCategory) {
@@ -14,8 +16,8 @@ const Banner = ({ data }) => {
       titleClass = `${titleClass} ${styles.longTitle}`;
       imageClass = styles.imageBusiness;
       break;
-      case 'Local News':
-      case 'Food & Wine':
+    case 'Local News':
+    case 'Food & Wine':
       titleClass = `${titleClass} ${styles.medTitle}`;
       imageClass = styles.imageLocal;
       break;
@@ -29,7 +31,11 @@ const Banner = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={titleClass}>{data.headerCategory}</div>
-      <img src={data.headerImgUrl} className={`${styles.image} ${imageClass}`} alt="" />
+      <img
+        src={data.headerImgUrl}
+        className={`${styles.image} ${imageClass}`}
+        alt=""
+      />
     </div>
   );
 };

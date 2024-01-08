@@ -13,6 +13,7 @@ import styles from "../../styles/ArticlePage.module.css";
 
 const ArticlePage = ({ article }) => {
   const router = useRouter();
+  const [isImageLoaded, setIsImageLoaded] = useState(false); 
   const [isChecked, setIsChecked] = useState(false);
   const scrollY = useScrollPosition();
   const dynamicMarginTop = Math.max(60 - scrollY, 0); 
@@ -42,20 +43,24 @@ const ArticlePage = ({ article }) => {
     };
   }, [router]);
 
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
+
 
   return (
     <div className = {styles.body}>
-        <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px` }}></div>
+        <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px`}}></div>
         <Menu isChecked={isChecked} className={menuClassName}/>
         <Header isChecked={isChecked} onCheckboxChange={handleCheckboxChange} />
         <Divider style={{ marginBottom: '1px' }} className={styles.headerDivider}/>
         <Divider className={styles.headerDivider}/>
-
+       
         <div className={styles.containerMain}>
-            <h1 className={styles.title}>{article.title}</h1>
-            <p className={styles.description}>{article.description}</p>
+        <h1 className={styles.title}>{article.title}</h1> 
+        <p className={styles.description}>{article.description}</p>
             <div className={styles.grid}>
-              <img src={formatedCmsUrl} alt="" className={styles.image} />
+              <img src={formatedCmsUrl} alt="" className={styles.image} onLoad={handleImageLoad} />
               <div className={styles.content}>
                 {paragraphs.map((paragraph, index) => (
                   <div key={index} className={styles.paragraph}>{paragraph}<br/><br/></div>

@@ -1,10 +1,10 @@
 /**
  * @type {import('next').NextConfig}
  */
-import './patch-fs.js';
+
 
 module.exports = {
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config, { isServer }) => {
     config.stats = 'verbose';
     config.optimization.splitChunks = {
       chunks: 'all',

@@ -1,35 +1,24 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import fetchRegister from "../api/fetchRegister";
 import fetchData from '../api/fetchData'
 import useDeviceSize from '../helpers/useDeviceSize';
-import useScrollPosition from '../helpers/useScroll';
 import toggleBodyScroll from '../helpers/toggleBodyScroll';
-import Menu from "../components/Menu";
-import Header from "../components/Header";
+import Layout from '../components/category/Layout'
 import Article from "../components/Article";
 import Headline from "../components/Headline";
 import Featured from "../components/Featured";
 import Trending from "../components/Trending";
 import Spotlight from "../components/Spotlight";
 import TitlePicture from "../components/TitlePicture";
-import Footer from "../components/Footer";
 import styles from "../styles/Home.module.css";
 import Divider from '@mui/material/Divider';
 
 export default function Home({ articles }) {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
-  const scrollY = useScrollPosition();
-  const dynamicMarginTop = Math.max(60 - scrollY, 0); 
-  const menuClassName = isChecked ? 'active' : '';
-  const overlayStyle = isChecked ? styles.overlayActive : styles.overlayInactive;
   const [width] = useDeviceSize();
   const isWideViewport = width > 740;
-
-  const handleCheckboxChange = (checked) => {
-    setIsChecked(checked);
-  };
 
   useEffect(() => {
     toggleBodyScroll(isChecked);
@@ -47,13 +36,7 @@ export default function Home({ articles }) {
 
 
   return (
-    <div className={styles.body}>
-        <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px` }}></div>
-        <Menu isChecked={isChecked} className={menuClassName}/> 
-        <Header isChecked={isChecked} onCheckboxChange={handleCheckboxChange} />
-        <Divider style={{ marginBottom: '1px' }} className={styles.headerDivider}/>
-        <Divider className={styles.headerDivider}/>
-        
+  <Layout>
       <div className={styles.containerMain}>
         <div className={styles.containerTop}>
           <div className={styles.containerHeadline}>
@@ -125,10 +108,8 @@ export default function Home({ articles }) {
           <Article className={styles.additional11} data={articles.additional11} />
           <Article className={styles.additional12} data={articles.additional12} />
         </div>
-
       </div>
-      <Footer className={styles.footer}/>
-    </div>
+      </Layout>
   );
 };
 

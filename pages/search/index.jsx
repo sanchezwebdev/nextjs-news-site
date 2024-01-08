@@ -78,7 +78,7 @@ const SearchPage = ({ articles }) => {
       <Header isChecked={isChecked} onCheckboxChange={handleCheckboxChange} />
       <Divider style={{ marginBottom: "1px" }} className={styles.headerDivider} />
       <Divider className={styles.headerDivider} />
-
+      <h1 className={styles.pageTitle} style={{marginTop:'20px'}}>Search</h1>
       <div className={styles.containerMain}>
         <div className={styles.containerSearch}>
           <form onSubmit={handleSearchSubmit} className={styles.form}>
@@ -94,7 +94,7 @@ const SearchPage = ({ articles }) => {
         </div>
 
         <div className={styles.containerResults}>
-          <h1 className={styles.pageTitle}>Search Results</h1>
+          {results && <h1 className={styles.pageTitle}>Results</h1>}
           <Divider className={styles.sectionDivider}/>
             {results.map((item) => (
               <div key={item._id} className={styles.result}>

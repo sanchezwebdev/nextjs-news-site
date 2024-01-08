@@ -34,7 +34,7 @@ const CardSecondary = ({ data, className }) => {
 
   return (
     <div className={combinedClassName} onClick={handleNavigation}>
-      <img src={data.imgUrl} alt={data.title} className={imageClass} onClick={handleNavigation} />
+      <img src={data.imgUrl} alt={data.title} className={imageClass} onClick={handleNavigation}/>
       <div className={titleClass} onClick={handleNavigation}>{data.title}</div>
       <div className={descriptionClass} onClick={handleNavigation}>{data.description}</div>
       <Divider className={styles.cardDivider}/>

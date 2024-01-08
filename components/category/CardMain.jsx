@@ -5,10 +5,6 @@ import styles from "../../styles/CardMain.module.css";
 import { Divider } from "@mui/material";
 
 const CardMain = ({ data, className }) => {
-    if (!data) {
-        return null; 
-    }
-  
   const router = useRouter();
   let titleClass = styles.title;
   let imageClass = styles.image;
@@ -31,8 +27,8 @@ const CardMain = ({ data, className }) => {
   const combinedClassName = `${styles.containerMain} ${className}`;
   return (
     <div className={combinedClassName} >
-      <img src={data.imgUrl} alt="" className={imageClass}onClick={handleNavigation} />
-      <div className={titleClass}onClick={handleNavigation}>{data.title}</div>
+      <img src={data.imgUrl} alt="" className={imageClass} onClick={handleNavigation}/>
+      <div className={titleClass} onClick={handleNavigation}>{data.title}</div>
       <div className={descriptionClass}onClick={handleNavigation}>{data.description}</div>
       <Divider className={styles.cardDivider}/>
     </div>

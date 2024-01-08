@@ -1,4 +1,5 @@
 import {React, useEffect, useState} from 'react'
+import { useRouter } from 'next/router';
 import Link from 'next/link'
 import styles from '../styles/Menu.module.css'
 import useScrollPosition from '../helpers/useScroll'
@@ -29,8 +30,7 @@ const Menu = ({ className }) => {
   }, []);
   
   return (
-    <div className={menuClass} style={{ marginTop: `${dynamicMarginTop}px` }}>
-      
+    <div className={menuClass} style={{ marginTop: `${dynamicMarginTop}px`}}>
       <div className={sidebarMenuClass}>
         <ul className={styles.sidebarMenuInner}>
             <li><SearchComponent className={styles.search}/></li>
@@ -42,9 +42,6 @@ const Menu = ({ className }) => {
             <li><Link href="/business-economy"className={styles.customLink}>Business & Economy</Link></li>
             <li><Link href="/arts-entertainment"className={styles.customLink}>Arts & Entertainment</Link></li>
             <li><Link href="/food-wine"className={styles.customLink}>Food & Wine</Link></li>
-            <li><Link href="/real-estate"className={styles.customLink}>Real Estate</Link></li>
-            <li><Link href="/classifieds"className={styles.customLink}>Classifieds</Link></li>
-            <li><Link href="/classifieds"className={styles.customLink}>Weather</Link></li>
         </ul>
       </div>
       
