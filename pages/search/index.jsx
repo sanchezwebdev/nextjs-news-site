@@ -100,7 +100,7 @@ const SearchPage = ({ articles }) => {
               <div key={item._id} className={styles.result}>
                 <h3 className={styles.title}>{item.title}</h3>
                 <p className={styles.description}>{item.description}</p>
-                <img src={item.cmsUrl} alt="" className={styles.image}/>
+                <img src={item.cmsUrl} alt="image" className={styles.image}/>
                 <Divider className={styles.resultDivider}/>
               </div>
             ))}

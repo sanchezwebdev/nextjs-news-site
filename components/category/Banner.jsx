@@ -34,7 +34,7 @@ const Banner = ({ data }) => {
       <img
         src={data.headerImgUrl}
         className={`${styles.image} ${imageClass}`}
-        alt=""
+        alt="image"
       />
     </div>
   );

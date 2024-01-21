@@ -46,7 +46,7 @@ const Spotlight = ({ data, className }) => {
         <>
         <h2 className={getTitleClass()} onClick={handleNavigation}>{articleData.title}</h2>
         <div className={styles.imageWrap}>
-          <img src={formatedCmsUrl} className={styles.image} alt="" onClick={handleNavigation} loading="lazy"/>
+          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
         </div>
           <Divider className={styles.divider}/>
           </>

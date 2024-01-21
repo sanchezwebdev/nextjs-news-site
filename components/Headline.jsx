@@ -37,7 +37,7 @@ const Headline = ({ data, className }) => {
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
           <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
-          <img src={formatedCmsUrl} className={styles.image} alt="" onClick={handleNavigation} loading="lazy"/>
+          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <br/><Divider className={styles.hlDivider}/>
         </>
       )}

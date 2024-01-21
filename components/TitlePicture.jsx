@@ -47,7 +47,7 @@ const TitlePicture = ({ data, className }) => {
       {articleData && (
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
-          <img src={formatedCmsUrl} className={styles.image} alt="" onClick={handleNavigation} loading="lazy"/>
+          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <Divider className={styles.divider} onClick={handleNavigation}/>
         </>
       )}

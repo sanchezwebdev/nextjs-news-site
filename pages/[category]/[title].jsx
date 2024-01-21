@@ -60,7 +60,7 @@ const ArticlePage = ({ article }) => {
         <h1 className={styles.title}>{article.title}</h1> 
         <p className={styles.description}>{article.description}</p>
             <div className={styles.grid}>
-              <img src={formatedCmsUrl} alt="" className={styles.image} onLoad={handleImageLoad} />
+              <img src={formatedCmsUrl} alt="image" className={styles.image} onLoad={handleImageLoad} />
               <div className={styles.content}>
                 {paragraphs.map((paragraph, index) => (
                   <div key={index} className={styles.paragraph}>{paragraph}<br/><br/></div>
