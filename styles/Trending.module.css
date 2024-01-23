@@ -1,3 +1,7 @@
+/*****************
+Trending Component Styling
+******************/
+
 .container{
     display: flex;
     flex-direction: column;
@@ -22,7 +26,13 @@
     margin: 5% 0 0 0;
 }
 
+/*****************
+Media Queries
+******************/
+
 @media(min-width: 740px) {
+
+    /*Grid Layout*/
     .container {
         position: relative;
         display: grid;

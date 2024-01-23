@@ -1,3 +1,7 @@
+/*****************
+Feature component styling
+******************/
+
 .container {
     display: flex;
     flex-direction: column;
@@ -25,6 +29,11 @@
     margin: 5% 0 0 0;
 }
 
+/*****************
+Media Queries
+******************/
+
+/*Grid Layout*/
 @media(min-width: 740px) {
     .container {
         position: relative;
@@ -65,6 +74,8 @@
 }
 
 @media(min-width: 1000px) {
+
+    /*Grid Layout*/
     .container {
         display: grid;
         grid-template-columns: 70% 30%;

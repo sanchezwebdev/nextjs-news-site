@@ -1,3 +1,7 @@
+/*****************
+Header Component Styling
+******************/
+
 .menuClose {
   display: none;
 }
@@ -24,7 +28,6 @@
   display: none;
 }
 
-
 input[type="checkbox"]:checked~.header>.sidebarIconToggle .menuClose {
   display: block;
 }
@@ -33,6 +36,9 @@ input[type="checkbox"]:checked~.header>.sidebarIconToggle .menu {
   display: none;
 }
 
+/*****************
+Media Queries
+******************/
 @media (min-width: 500px) {
   #span {
     display: block;

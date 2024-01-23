@@ -1,3 +1,7 @@
+/*****************
+Home Page Styling
+******************/
+
 .body {
   display: flex;
   flex-direction: column;
@@ -60,6 +64,10 @@
   align-items: center;
 }
 
+/*****************
+Media Queries
+******************/
+
 @media (min-width: 740px) {
   .trendingTitle{
     margin: 0;
@@ -73,6 +81,7 @@
     display: none;
   }
 
+  /*Grid Layout*/
   .containerMain {
     display: grid;
     justify-items: center;
@@ -86,6 +95,7 @@
       "additional"
   }
 
+  /*Grid Layout*/
   .containerTop {
     display: grid;
     grid-template-columns: 60% auto 40%;
@@ -98,6 +108,7 @@
     margin-right: 3%;
   }
 
+  /*Grid Layout*/
   .containerFeatured {
     display: grid;
     grid-template-columns: 100%;
@@ -111,6 +122,7 @@
     margin-left: 5%;
   }
 
+  /*Grid Layout*/
   .containerTrending {
     margin-top: 2%;
     display: grid;
@@ -125,6 +137,7 @@
     justify-content: center;
   }
 
+  /*Grid Layout*/
   .containerSpotlight {
     margin-top: 2%;
     display: grid;
@@ -136,6 +149,7 @@
       "sl1 sl2 sl3";
   }
 
+  /*Grid Layout*/
   .containerAdditional {
     display: grid;
     grid-gap: 1%;
@@ -156,7 +170,9 @@
     max-height: 450px;
   }
 
-  .containerHeadline {grid-area: headline;}
+
+/*Grid Area Declarations*/
+.containerHeadline {grid-area: headline;}
 .containerFeatured{grid-area: featured}
 .containerTrending{grid-area: trending}
 .containerSpotlight{grid-area: spotlight}

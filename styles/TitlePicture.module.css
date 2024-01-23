@@ -1,3 +1,7 @@
+/*****************
+TitlePicture Component Styling
+******************/
+
 .image{
     object-fit: cover;
     height: 100%;
@@ -20,6 +24,9 @@
     margin: 5% 0 0 0;
 }
 
+/*****************
+Media Queries
+******************/
 @media(min-width: 740px){
 
     .container{

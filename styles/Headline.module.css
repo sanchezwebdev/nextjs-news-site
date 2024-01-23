@@ -1,3 +1,7 @@
+/*****************
+Headline Component Styling
+******************/
+
 .container {
     display: flex;
     flex-direction: column;
@@ -20,6 +24,9 @@
     margin: 2% 0;
 }
 
+/*****************
+Media Query
+******************/
 @media(min-width: 740px) {
     .container {
         align-items: baseline;

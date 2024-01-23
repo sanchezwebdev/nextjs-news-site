@@ -1,3 +1,7 @@
+/*****************
+Main Card styling
+******************/
+
 .containerMain {
     position: relative;
     display: flex;
@@ -36,6 +40,10 @@
     align-self: center;
     padding: 2%;
 }
+
+/*****************
+Media Queries
+******************/
 
 @media(min-width: 300px) {
     .title {

@@ -28,6 +28,9 @@ Article component styling
     margin: 2% 0;
 }
 
+/*****************
+Media Queries
+******************/
 @media(min-width: 740px) {
     .container {
         display: flex;

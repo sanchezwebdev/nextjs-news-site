@@ -1,3 +1,7 @@
+/*****************
+Spotlight Component Styling
+******************/
+
 .container {
     position: relative;
     display: flex;
@@ -64,6 +68,9 @@
     margin: 5% 0 0 0;
 }
 
+/*****************
+Media Queries
+******************/
 @media(min-width: 600px) {
     .s3Title {
         font-size: 24px;

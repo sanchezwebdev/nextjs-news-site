@@ -1,3 +1,5 @@
+/*Custom Font Declaration*/
+
 @font-face {
     font-family: 'Chomsky';
     src: url('../public/fonts/Chomsky.woff') format('woff'),

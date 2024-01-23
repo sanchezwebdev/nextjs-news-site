@@ -1,3 +1,7 @@
+/*****************
+Search Component Styling
+******************/
+
 .body {
   position: absolute;
   display: flex;
@@ -126,6 +130,11 @@
   max-width: 1200px;
 }
 
+/*****************
+Media Queries
+******************/
+
+/*Grid Layout*/
 @media(min-width: 500px) {
   .result {
     display: grid;

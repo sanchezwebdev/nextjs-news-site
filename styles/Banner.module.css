@@ -1,3 +1,7 @@
+/*****************
+Banne Styling
+******************/
+
 .container {
     position: relative;
     display: flex;
@@ -60,6 +64,10 @@
     color: white;
     transition: font-size .5s ease;
 }
+
+/*****************
+Media Queries
+******************/
 
 @media(min-width: 350px) {
     .medTitle {

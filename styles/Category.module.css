@@ -1,3 +1,7 @@
+/*****************
+Category styling
+******************/
+
 .body {
   position: absolute;
   display: flex;
@@ -75,6 +79,11 @@
   margin-top: 5%;
 }
 
+/*****************
+Media Queries
+******************/
+
+/*Grid Layout*/
 @media(min-width:500px) {
   .cardSecondaryContainer {
     display: grid;
@@ -105,6 +114,7 @@
 
 @media(min-width:740px) {
 
+  /*Grid Layout*/
   .cardMainContainer {
     height: auto;
     display: grid;
@@ -122,6 +132,7 @@
     height: auto;
   }
 
+  /*Grid Layout*/
   .cardSecondaryContainer {
     margin: 0;
     display: grid;
@@ -151,6 +162,7 @@
       "cm1 cm2 cm3 cm4 cm5"
   }
 
+  /*Grid Layout*/
   .cardSecondaryContainer {
     grid-row-gap: 20px;
     grid-template-columns: repeat(60, auto);
@@ -173,6 +185,7 @@
 
 }
 
+/*Grid Area Declarations*/
 .cardMain1 { grid-area: cm1; }
 .cardMain2 { grid-area: cm2; }
 .cardMain3 { grid-area: cm3; }

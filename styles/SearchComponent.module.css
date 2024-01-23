@@ -1,3 +1,7 @@
+/*****************
+Search Comppnent Styling
+******************/
+
 .input{
     height: 40px;
     width: 100%;
@@ -35,6 +39,9 @@
 }
 
 
+/*****************
+Media Query
+******************/
 @media(max-width:500px){
 .input{
     margin: 0;
