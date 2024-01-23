@@ -133,11 +133,13 @@ const SearchPage = ({ articles }) => {
 export async function getServerSideProps() {
   const data = await fetchData(); 
   const articles = data.count
+  const accessToken = process.env.ACCESS_TOKEN;
+  const spaceId = process.env.SPACE_ID;
 
   for(const article of articles){
   if (articles && article.imgId) {
     const cmsResponse = await fetch(
-      `https://cdn.contentful.com/spaces/vdnl4md1xpsv/assets/${article.imgId}?access_token=tB7F-mUWmn1dxWECof7Jnq7G_SfXUqreWmM6oG4KvK8`
+      `https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`
     );
     const imageData = await cmsResponse.json();
     article.cmsUrl = imageData.fields.file.url; 

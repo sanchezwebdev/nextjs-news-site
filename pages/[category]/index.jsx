@@ -86,8 +86,11 @@ export async function getStaticProps({ params }) {
   function getValueByKey(imgObject, keyToMatch) {
       return imgObject[keyToMatch] || null;
     }
+
+  const accessToken = process.env.ACCESS_TOKEN;
+  const spaceId = process.env.SPACE_ID;  
     
-  const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/vdnl4md1xpsv/assets/${imgId}?access_token=tB7F-mUWmn1dxWECof7Jnq7G_SfXUqreWmM6oG4KvK8`);
+  const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
   const jsonResponse = await cmsResponse.json();
   const headerImgId = await jsonResponse.fields.file.url;
   const headerImgUrl = `https:${headerImgId}?fm=webp`;
@@ -95,7 +98,7 @@ export async function getStaticProps({ params }) {
 
   for (const article of articles) {
     if(article.imgId){
-    const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/vdnl4md1xpsv/assets/${article.imgId}?access_token=tB7F-mUWmn1dxWECof7Jnq7G_SfXUqreWmM6oG4KvK8`);
+    const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
     const imageData = await cmsResponse.json();
     const cmsUrl = await imageData.fields.file.url;
     const formatedCmsUrl = `https:${cmsUrl}?fm=webp&w=1500&h=750`;
