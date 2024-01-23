@@ -79,7 +79,7 @@ Search Component Styling
   align-content: center;
   margin-top: 5%;
   height: 100%;
-  width: 90%;
+  width: 100%;
 }
 
 .image {
@@ -128,6 +128,12 @@ Search Component Styling
   align-self: center;
   width: 100%;
   max-width: 1200px;
+}
+
+.title:hover,
+.image:hover,
+.description:hover {
+    cursor: pointer;
 }
 
 /*****************

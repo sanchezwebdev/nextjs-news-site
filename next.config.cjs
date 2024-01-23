@@ -2,7 +2,6 @@
  * @type {import('next').NextConfig}
  */
 
-
 module.exports = {
   webpack: (config, { isServer }) => {
     config.stats = 'verbose';

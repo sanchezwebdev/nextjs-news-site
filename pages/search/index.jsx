@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Divider } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import fetchData from "../../api/fetchData";
+import createSlug from "../../helpers/slug";
 import useScrollPosition from "../../helpers/useScroll";
 import toggleBodyScroll from '../../helpers/toggleBodyScroll'
 import Header from "../../components/Header";
@@ -28,8 +29,7 @@ const SearchPage = ({ articles }) => {
   };
 
   useEffect(() => {
-    toggleBodyScroll(isChecked);
-  }, [isChecked]);
+    toggleBodyScroll(isChecked);  }, [isChecked]);
 
   // Effect for handling route changes, closing the menu when starting navigation.
   useEffect(() => {
@@ -76,6 +76,16 @@ const SearchPage = ({ articles }) => {
     setResults(filteredResults);
   };
 
+
+    const handleNavigation = (item) => {
+      if (item && item.title) {
+        const titleSlug = createSlug(item.title);
+        const categorySlug = createSlug(item.category);
+        router.push(`/${categorySlug}/${titleSlug}`);
+      }
+    };
+    
+
   return (
     <div className={styles.body}>
       <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px` }}></div>
@@ -94,7 +104,9 @@ const SearchPage = ({ articles }) => {
               onChange={handleSearchChange}
               placeholder="Search..."
             />
-            <button type="submit" className={styles.button}><SearchIcon className={styles.icon}/></button>
+            <button type="submit" className={styles.button}>
+              <SearchIcon className={styles.icon}/>
+            </button>
           </form>
         </div>
 
@@ -103,9 +115,9 @@ const SearchPage = ({ articles }) => {
           <Divider className={styles.sectionDivider}/>
             {results.map((item) => (
               <div key={item._id} className={styles.result}>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.description}>{item.description}</p>
-                <img src={item.cmsUrl} alt="image" className={styles.image}/>
+                <h3 className={styles.title} onClick={() => handleNavigation(item)}>{item.title}</h3>
+                <p className={styles.description} onClick={() => handleNavigation(item)}>{item.description}</p>
+                <img src={item.cmsUrl} alt="image" className={styles.image} onClick={() => handleNavigation(item)}/>
                 <Divider className={styles.resultDivider}/>
               </div>
             ))}
