@@ -8,16 +8,6 @@ const TitlePicture = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
 
-  // Effect hook to update and track the window width on resize.
-  useEffect(() => {
-    const updateWidth = () => {
-      setWidth(window.innerWidth);
-    };
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
-
   // Generating a formatted CMS URL for the article image, with specific dimensions.
   const formatedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=1500&h=750`

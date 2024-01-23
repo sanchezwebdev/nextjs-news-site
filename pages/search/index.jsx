@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Divider } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
@@ -31,6 +31,7 @@ const SearchPage = ({ articles }) => {
     toggleBodyScroll(isChecked);
   }, [isChecked]);
 
+  // Effect for handling route changes, closing the menu when starting navigation.
   useEffect(() => {
     const handleRouteChange = () => {
       setIsChecked(false);
@@ -41,6 +42,7 @@ const SearchPage = ({ articles }) => {
     };
   }, [router]);
 
+  // Effect to perform a search when the query changes.
   useEffect(() => {
     if (query) {
       setSearchQuery(query);
@@ -48,15 +50,18 @@ const SearchPage = ({ articles }) => {
     }
   }, [query]);
 
+  // Handler for search input changes.
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
+  // Handler for form submission to initiate a search.
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     router.push(`/search?query=${searchQuery}`);
   };
 
+  // Function to perform the search operation.
   const performSearch = (searchTerm) => {
     const filteredResults = articles.filter((item) => {
       const lowerCaseSearchTerm = searchTerm.toLowerCase();
@@ -113,7 +118,7 @@ const SearchPage = ({ articles }) => {
 };
 
 // Fetch data for server-side rendering
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const data = await fetchData(); 
   const articles = data.count
 

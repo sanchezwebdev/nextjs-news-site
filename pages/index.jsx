@@ -113,6 +113,7 @@ export default function Home({ articles }) {
   );
 };
 
+// Next.js function to fetch data.
 export async function getStaticProps() {
   try {
     const data = await fetchData();
@@ -121,10 +122,12 @@ export async function getStaticProps() {
     const positions = ["headline", "featured1", "featured2", "featured3", "featured4", "featured5", "trending1", "trending2", "trending3", "trending4", "trending5", "trending6", "spotlight1", "spotlight2", "spotlight3", "additional1", "additional2", "additional3", "additional4", "additional5", "additional6", "additional7", "additional8", "additional9", "additional10", "additional11", "additional12"];
     const articles = {};
 
+    // Map each article position to its data.
     for (const position of positions) {
       const articleData = data.count.find(article => article._id === homeRegister[position]);
       articles[position] = articleData;
 
+      // Fetch and set the CMS URL for each article's image.
       if (articleData && articleData.imgId) {
         const cmsResponse = await fetch(
           `https://cdn.contentful.com/spaces/vdnl4md1xpsv/assets/${articleData.imgId}?access_token=tB7F-mUWmn1dxWECof7Jnq7G_SfXUqreWmM6oG4KvK8`

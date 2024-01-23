@@ -1,34 +1,9 @@
-// pages/[category].js
-import { React, useState, useEffect } from "react";
 import Banner from "../../components/category/Banner";
 import CardMain from "../../components/category/CardMain";
 import CardSecondary from "../../components/category/CardSecondary"
 import styles from "../../styles/Category.module.css";
 
 const Sports = ({ categoryArticles, headerImgUrl, headerCategory }) => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  useEffect(() => {
-    const images = document.querySelectorAll("img"); // Select all images on the page
-
-    const loadHandler = () => {
-      const loadedImages = [...images].filter((img) => img.complete);
-
-      if (loadedImages.length === images.length) {
-        setImagesLoaded(true); // All images are loaded
-      }
-    };
-
-    images.forEach((img) => {
-      img.addEventListener("load", loadHandler);
-    });
-
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", loadHandler);
-      });
-    };
-  }, []);
   
   if (!categoryArticles) {
     return <div>404 Page Not Found</div>;
@@ -37,7 +12,6 @@ const Sports = ({ categoryArticles, headerImgUrl, headerCategory }) => {
 
     <div className={styles.containerMain}>
       <Banner data={{ headerImgUrl, headerCategory }} />
-
         <div className={styles.cardsContainer}>
           <div className={styles.cardMainContainer}>
               <CardMain className={`${styles.cardMain} ${styles.cardMain1}`} data={categoryArticles.cardMain1}/>
