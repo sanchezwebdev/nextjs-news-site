@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/SearchComponent.module.css'
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,6 +6,8 @@ import SearchIcon from '@mui/icons-material/Search';
 const SearchInput = () => {
   const [query, setQuery] = useState('');
   const router = useRouter();
+
+  // Function to handle search submission.
   const handleSearch = (e) => {
     e.preventDefault();
     router.push(`/search?query=${query}`);

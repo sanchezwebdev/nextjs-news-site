@@ -1,5 +1,4 @@
-// toggleBodyScroll.js
-
+//  Function  used to disable scrolling 
 const toggleBodyScroll = (isChecked) => {
     const setBodyScroll = (hidden, paddingRight) => {
       document.body.style.overflow = hidden ? 'hidden' : '';

@@ -1,5 +1,4 @@
 import {React, useEffect, useState} from 'react'
-import { useRouter } from 'next/router';
 import Link from 'next/link'
 import styles from '../styles/Menu.module.css'
 import useScrollPosition from '../helpers/useScroll'
@@ -8,12 +7,16 @@ import SearchComponent from '../components/Search'
 const Menu = ({ className }) => {
   const [isTransitionDisabled, setIsTransitionDisabled] = useState(false);
   const scrollY = useScrollPosition();
+  // Calculating dynamic margin-top based on scroll position.
   const dynamicMarginTop = Math.max(60 - scrollY, 0);
+  // Conditional class name for the menu based on the 'active' state.
   const menuClass = className === 'active' ? styles.menuActive : styles.menu;
+  // Conditional class names for the sidebar menu based on 'active' state and transition state.
   const sidebarMenuClass = className === 'active'
   ? isTransitionDisabled ? `${styles.sidebarActive} ${styles.noTransition}` : styles.sidebarActive
   : isTransitionDisabled ? `${styles.sidebarMenu} ${styles.noTransition}` : styles.sidebarMenu;
 
+  // Effect hook to manage the transition state during window resize.
   useEffect(() => {
     const handleResize = () => {
       setIsTransitionDisabled(true);

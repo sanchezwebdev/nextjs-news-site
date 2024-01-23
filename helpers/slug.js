@@ -1,3 +1,4 @@
+// Creates URL slug 
 const createSlug = (title) => {
     const slug = title.toLowerCase()
     .replace(/ /g, '-')

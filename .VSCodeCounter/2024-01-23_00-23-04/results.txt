@@ -1,0 +1,94 @@
+Date : 2024-01-23 00:23:04
+Directory : c:\Users\oracl\Documents\repos\working-projects\temecula-tribune
+Total : 56 files,  5857 codes, 17 comments, 573 blanks, all 6447 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          3 |      2,699 |          0 |          2 |      2,701 |
+| CSS            |         19 |      1,597 |          3 |        277 |      1,877 |
+| JavaScript JSX |         26 |      1,457 |         10 |        264 |      1,731 |
+| JavaScript     |          8 |        104 |          4 |         30 |        138 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                    | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                       |         56 |      5,857 |         17 |        573 |      6,447 |
+| . (Files)                                                                                               |          4 |      2,720 |          3 |          5 |      2,728 |
+| api                                                                                                     |          3 |         30 |          0 |         10 |         40 |
+| components                                                                                              |         14 |        576 |          1 |         94 |        671 |
+| components (Files)                                                                                      |         10 |        421 |          0 |         71 |        492 |
+| components\category                                                                                     |          4 |        155 |          1 |         23 |        179 |
+| helpers                                                                                                 |          4 |         53 |          1 |         17 |         71 |
+| pages                                                                                                   |         12 |        881 |          9 |        170 |      1,060 |
+| pages (Files)                                                                                           |          2 |        143 |          0 |         17 |        160 |
+| pages\[category]                                                                                        |          9 |        622 |          8 |        137 |        767 |
+| pages\search                                                                                            |          1 |        116 |          1 |         16 |        133 |
+| styles                                                                                                  |         19 |      1,597 |          3 |        277 |      1,877 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\api\fetchData.js                       | JavaScript     |         10 |          0 |          3 |         13 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\api\fetchHeaderImages.js               | JavaScript     |         10 |          0 |          3 |         13 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\api\fetchRegister.js                   | JavaScript     |         10 |          0 |          4 |         14 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Article.jsx                 | JavaScript JSX |         39 |          0 |          6 |         45 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Featured.jsx                | JavaScript JSX |         52 |          0 |          8 |         60 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Footer.jsx                  | JavaScript JSX |         39 |          0 |          7 |         46 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Header.jsx                  | JavaScript JSX |         24 |          0 |          5 |         29 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Headline.jsx                | JavaScript JSX |         43 |          0 |          6 |         49 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Menu.jsx                    | JavaScript JSX |         45 |          0 |          8 |         53 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Search.jsx                  | JavaScript JSX |         25 |          0 |          4 |         29 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Spotlight.jsx               | JavaScript JSX |         51 |          0 |          8 |         59 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\TitlePicture.jsx            | JavaScript JSX |         51 |          0 |          8 |         59 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\Trending.jsx                | JavaScript JSX |         52 |          0 |         11 |         63 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\category\Banner.jsx         | JavaScript JSX |         38 |          0 |          6 |         44 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\category\CardMain.jsx       | JavaScript JSX |         34 |          0 |          5 |         39 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\category\CardSecondary.jsx  | JavaScript JSX |         39 |          0 |          7 |         46 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\components\category\Layout.jsx         | JavaScript JSX |         44 |          1 |          5 |         50 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\helpers\slug.js                        | JavaScript     |          9 |          0 |          1 |         10 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\helpers\toggleBodyScroll.js            | JavaScript     |         11 |          1 |          4 |         16 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\helpers\useDeviceSize.js               | JavaScript     |         14 |          0 |          5 |         19 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\helpers\useScroll.js                   | JavaScript     |         19 |          0 |          7 |         26 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\next.config.cjs                        | JavaScript     |         21 |          3 |          3 |         27 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\package-lock.json                      | JSON           |      1,420 |          0 |          1 |      1,421 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\package.json                           | JSON           |         28 |          0 |          1 |         29 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\ArtsEntertainment.jsx | JavaScript JSX |         57 |          1 |         16 |         74 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\BusinessEconomy.jsx   | JavaScript JSX |         57 |          1 |         13 |         71 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\California.jsx        | JavaScript JSX |         57 |          1 |         14 |         72 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\FoodWine.jsx          | JavaScript JSX |         57 |          1 |         15 |         73 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\LocalNews.jsx         | JavaScript JSX |         57 |          1 |         14 |         72 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\Politics.jsx          | JavaScript JSX |         57 |          1 |         14 |         72 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\Sports.jsx            | JavaScript JSX |         57 |          1 |         14 |         72 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\[title].jsx           | JavaScript JSX |         95 |          1 |         18 |        114 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\[category]\index.jsx             | JavaScript JSX |        128 |          0 |         19 |        147 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\_app.jsx                         | JavaScript JSX |          7 |          0 |          3 |         10 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\index.jsx                        | JavaScript JSX |        136 |          0 |         14 |        150 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\pages\search\index.jsx                 | JavaScript JSX |        116 |          1 |         16 |        133 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\scratch.json                           | JSON           |      1,251 |          0 |          0 |      1,251 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Article.module.css              | CSS            |         35 |          3 |          8 |         46 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\ArticlePage.module.css          | CSS            |        123 |          0 |         21 |        144 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Banner.module.css               | CSS            |        133 |          0 |         29 |        162 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\CardMain.module.css             | CSS            |         79 |          0 |         17 |         96 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\CardSecondary.module.css        | CSS            |         87 |          0 |         13 |        100 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Category.module.css             | CSS            |        169 |          0 |         25 |        194 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Featured.module.css             | CSS            |         78 |          0 |         15 |         93 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Footer.module.css               | CSS            |        104 |          0 |         17 |        121 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Header.module.css               | CSS            |         43 |          0 |          9 |         52 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Headline.module.css             | CSS            |         24 |          0 |          5 |         29 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Home.module.css                 | CSS            |        182 |          0 |         25 |        207 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Menu.module.css                 | CSS            |        102 |          0 |         15 |        117 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Search.module.css               | CSS            |        169 |          0 |         30 |        199 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\SearchComponent.module.css      | CSS            |         39 |          0 |          6 |         45 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Spotlight.module.css            | CSS            |        106 |          0 |         22 |        128 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\TitlePicture.module.css         | CSS            |         45 |          0 |          8 |         53 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\Trending.module.css             | CSS            |         55 |          0 |          8 |         63 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\fonts.css                       | CSS            |          5 |          0 |          1 |          6 |
+| c:\Users\oracl\Documents\repos\working-projects\temecula-tribune\styles\globals.css                     | CSS            |         19 |          0 |          3 |         22 |
+| Total                                                                                                   |                |      5,857 |         17 |        573 |      6,447 |
++---------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

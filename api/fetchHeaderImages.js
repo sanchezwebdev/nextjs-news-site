@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 async function fetchHeaderImages() {
+  const url = process.env.DB_HEADER_IMAGES
   try {
-
-    const response = await axios('https://us-east-1.aws.data.mongodb-api.com/app/data-chsij/endpoint/header_images');
+    const response = await axios(`${url}`);
      return response.data
 
   } catch (error) {

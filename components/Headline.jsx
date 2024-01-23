@@ -11,6 +11,7 @@ const Headline = ({ data, className }) => {
   ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
   : null;
 
+  // Effect hook to fetch article data.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,6 +24,7 @@ const Headline = ({ data, className }) => {
     fetchData();
   }, [data]);
   
+  // Handler for navigating to the article's detailed page.
   const handleNavigation = () => {
     if (articleData && articleData.title) {
       const titleSlug = createSlug(articleData.title);

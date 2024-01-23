@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import {useRouter} from 'next/router'
 import styles from '../../styles/Banner.module.css';
 
 const Banner = ({ data }) => {
-
   let titleClass = styles.title;
   let imageClass;
 
+  // Switch statement to set 'titleClass' and 'imageClass' based on the 'data.headerCategory' value.
   switch (data.headerCategory) {
     case 'Arts & Entertainment':
       titleClass = `${titleClass} ${styles.longTitle}`;

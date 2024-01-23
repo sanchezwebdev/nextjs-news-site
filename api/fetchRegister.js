@@ -1,11 +1,10 @@
 import axios from 'axios';
 
 async function fetchRegister() {
+  const url = process.env.DB_REGISTER
   try {
-
-    const register = await axios('https://us-east-1.aws.data.mongodb-api.com/app/data-chsij/endpoint/register');
+    const register = await axios(`${url}`);
     return register.data
-
   } catch (error) {
     console.error(error);
   }

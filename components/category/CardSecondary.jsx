@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouter } from 'next/router';
 import createSlug from '../../helpers/slug';
 import styles from "../../styles/CardSecondary.module.css";
@@ -15,6 +14,7 @@ const CardSecondary = ({ data, className }) => {
   let descriptionClass = styles.description;
   const combinedClassName = `${styles.containerSecondary} ${className}`;
 
+   // Iterating through numbers 1 to 12 to check if 'className' includes a specific cardMain class.
   for (let i = 1; i <= 12; i++) {
     if (className.includes(`cardSecondary${i}_`)) {
       titleClass = `${styles[`title${i}`] || ''} ${styles.title}`;
@@ -24,6 +24,7 @@ const CardSecondary = ({ data, className }) => {
     }
   }
 
+  // Function to handle navigation when any part of the card is clicked.
   const handleNavigation = () => {
     if (data.title) {
       const titleSlug = createSlug(data.title);

@@ -4,7 +4,7 @@ import styles from "../styles/Header.module.css";
 const Header = ({ isChecked, onCheckboxChange }) => {
 
   return (
-    <>  
+      <>  
         <input
         type="checkbox"
         className={styles.openSidebarMenu}

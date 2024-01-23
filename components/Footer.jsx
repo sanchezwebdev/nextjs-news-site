@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import styles from "../styles/Footer.module.css";
 import toggleBodyScroll from '../helpers/toggleBodyScroll';
 import Divider from '@mui/material/Divider';
@@ -11,6 +11,7 @@ const [open, setOpen] = useState(false);
 const handleOpen = () => setOpen(true);
 const handleClose = () => setOpen(false);
 
+// Effect hook to toggle body scroll based on the 'open' state of the modal.
   useEffect(() => {
     toggleBodyScroll(open);
   }, [open]);

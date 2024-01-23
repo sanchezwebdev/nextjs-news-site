@@ -1,5 +1,5 @@
 // components/Layout.js
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { Divider } from "@mui/material";
 import useScrollPosition from "../../helpers/useScroll";
@@ -20,10 +20,12 @@ const Layout = ({ children }) => {
     setIsChecked(checked);
   };
 
+  // Effect for toggling body scroll based on the isChecked state.
   useEffect(() => {
     toggleBodyScroll(isChecked);
   }, [isChecked]);
 
+  // Effect for handling route changes, closing the menu when starting navigation.
   useEffect(() => {
     const handleRouteChange = () => {
       setIsChecked(false);
@@ -33,6 +35,7 @@ const Layout = ({ children }) => {
       router.events.off('routeChangeStart', handleRouteChange);
     };
   }, [router]);
+  
   return (
     <div className={styles.body}>
     <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px` }}></div>

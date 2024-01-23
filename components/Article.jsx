@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Article.module.css";
 import Divider from '@mui/material/Divider';
 import createSlug from '../helpers/slug'
@@ -8,6 +8,7 @@ const Article = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const router = useRouter();
 
+  // Effect hook to fetch article data.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +21,7 @@ const Article = ({ data, className }) => {
     fetchData();
   }, [data]);
 
+  // Handler for navigating to the article's detailed page.
   const handleNavigation = () => {
     if (articleData && articleData.title) {
       const titleSlug = createSlug(articleData.title);

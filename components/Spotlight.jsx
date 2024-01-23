@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import styles from "../styles/Spotlight.module.css";
 import Divider from '@mui/material/Divider';
@@ -11,6 +11,7 @@ const Spotlight = ({ data, className }) => {
   ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
   : null;
 
+   // Effect hook to fetch article data.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,6 +24,7 @@ const Spotlight = ({ data, className }) => {
     fetchData();
   }, [data]);
   
+   // Handler for navigating to the article's detailed page.
   const handleNavigation = () => {
     if (articleData && articleData.title) {
       const titleSlug = createSlug(articleData.title);
@@ -31,6 +33,7 @@ const Spotlight = ({ data, className }) => {
     }
   };
 
+  // Function to determine the title class based on the 'className' prop.
   const getTitleClass = () => {
     let titleClass = '';
     if (className === 'Home_spotlight1__ic7om') {titleClass += ` ${styles.s1Title}`;}

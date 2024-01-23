@@ -1,11 +1,11 @@
 import axios from 'axios';
 
+  //Fetch request to the database 
 async function fetchData() {
+  const url = process.env.DB_URL
   try {
-
-    const response = await axios('https://us-east-1.aws.data.mongodb-api.com/app/data-chsij/endpoint/test');
+    const response = await axios(`${url}`);
      return response.data
-
   } catch (error) {
     console.error(error);
   }

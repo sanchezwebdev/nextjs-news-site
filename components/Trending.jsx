@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/Trending.module.css";
 import Divider from '@mui/material/Divider';
 import createSlug from "../helpers/slug"
@@ -9,6 +9,7 @@ const Trending = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
   const [width, setWidth] = useState(null);
 
+  // Effect hook to update and track the window width on resize.
   useEffect(() => {
     const updateWidth = () => {
       setWidth(window.innerWidth);
@@ -18,10 +19,12 @@ const Trending = ({ data, className }) => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+  // Generating a formatted CMS URL for the article image, with dynamic dimensions based on window width.
   const formatedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
     : null;
   
+    // Effect hook to fetch article data.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,6 +37,7 @@ const Trending = ({ data, className }) => {
     fetchData();
   }, [data]);
 
+  // Handler for navigating to the article's detailed page.
   const handleNavigation = () => {
     if (articleData && articleData.title) {
       const titleSlug = createSlug(articleData.title);

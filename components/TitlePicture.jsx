@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 import styles from "../styles/TitlePicture.module.css";
 import Divider from '@mui/material/Divider';
@@ -7,8 +7,8 @@ import createSlug from "../helpers/slug.js"
 const TitlePicture = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
-  const [width, setWidth] = useState(null);
 
+  // Effect hook to update and track the window width on resize.
   useEffect(() => {
     const updateWidth = () => {
       setWidth(window.innerWidth);
@@ -18,10 +18,12 @@ const TitlePicture = ({ data, className }) => {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+  // Generating a formatted CMS URL for the article image, with specific dimensions.
   const formatedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=1500&h=750`
     : null;
 
+    // Effect hook to fetch article data.
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,6 +36,7 @@ const TitlePicture = ({ data, className }) => {
     fetchData();
   }, [data]);
   
+  // Handler for navigating to the article's detailed page.
   const handleNavigation = () => {
     if (articleData && articleData.title) {
       const titleSlug = createSlug(articleData.title);

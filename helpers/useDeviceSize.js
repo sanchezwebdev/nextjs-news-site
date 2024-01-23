@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react"
 
+// Update window with on window resize events.
 const useDeviceSize = () => {
     const [width, setWidth] = useState(0)
     const handleWindowResize = () => {
