@@ -25,7 +25,7 @@ const handleClose = () => setOpen(false);
       </Modal>
       <div className={styles.innerFooter}>
         
-        <div className={styles.siteName}>The Temecula Tribune</div>
+        <div className={styles.siteName}>The Pasadena Tribune</div>
         <div className={styles.advertise} onClick={handleOpen}>Advertise With Us</div>
         <div className={styles.social}>
           <Twitter className={styles.icon} onClick={handleOpen}/>
@@ -36,7 +36,7 @@ const handleClose = () => setOpen(false);
         <div className={styles.careers} onClick={handleOpen}>Careers</div>
         <div className={styles.about} onClick={handleOpen}>About Us</div>
         <Divider className={styles.divider}/>
-        <div className={styles.copyright}>Copyright © 2023, The Temecula Tribune | Terms of Service | Privacy Policy |</div>
+        <div className={styles.copyright}>Copyright © 2023, The Pasadena Tribune | Terms of Service | Privacy Policy |</div>
         
       </div>
     </footer> 

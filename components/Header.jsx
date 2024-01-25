@@ -14,7 +14,7 @@ const Header = ({ isChecked, onCheckboxChange }) => {
       />
       <header className={styles.header}>
         <span id={styles.span}></span>
-        <div className={styles.title}>The Temecula Tribune</div>
+        <div className={styles.title}>The Pasadena Tribune</div>
         <label htmlFor="openSidebarMenu" className={styles.sidebarIconToggle}>
           <IoMenu className={styles.menu} id="menu"/> 
           <IoClose className={styles.menuClose} id="menuClose"/>
