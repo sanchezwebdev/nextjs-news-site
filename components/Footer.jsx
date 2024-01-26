@@ -37,7 +37,6 @@ const handleClose = () => setOpen(false);
         <div className={styles.about} onClick={handleOpen}>About Us</div>
         <Divider className={styles.divider}/>
         <div className={styles.copyright}>Copyright © 2023, The Pasadena Tribune | Terms of Service | Privacy Policy |</div>
-        
       </div>
     </footer> 
   );

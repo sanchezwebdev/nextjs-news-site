@@ -126,12 +126,12 @@ export async function getStaticProps() {
     for (const position of positions) {
       const articleData = data.count.find(article => article._id === homeRegister[position]);
       articles[position] = articleData;
-
       const accessToken = process.env.ACCESS_TOKEN;
       const spaceId = process.env.SPACE_ID;
 
       // Fetch and set the CMS URL for each article's image.
       if (articleData && articleData.imgId) {
+        const imgId = articleData.imgId
         const cmsResponse = await fetch(
           `https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`
         );
@@ -140,6 +140,7 @@ export async function getStaticProps() {
       }
     }
 
+    
     return {
       props: {
         articles,

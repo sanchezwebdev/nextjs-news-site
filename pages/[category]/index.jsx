@@ -98,6 +98,7 @@ export async function getStaticProps({ params }) {
 
   for (const article of articles) {
     if(article.imgId){
+    const imgId = article.imgId
     const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
     const imageData = await cmsResponse.json();
     const cmsUrl = await imageData.fields.file.url;

@@ -138,6 +138,7 @@ export async function getServerSideProps() {
 
   for(const article of articles){
   if (articles && article.imgId) {
+    const imgId = article.imgId
     const cmsResponse = await fetch(
       `https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`
     );
