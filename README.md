@@ -19,7 +19,7 @@ Content is fetched using Axios and managed through Contentful, a headless CMS CD
 
 ```bash
 git https://github.com/NuminousCode/nextjs-news-site.git 
-cd git https://github.com/NuminousCode/nextjs-news-site.git 
+cd nextjs-news-site
 ```
 Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
 
