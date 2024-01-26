@@ -4,7 +4,7 @@ This application is a news platform built with Next.js and a serverless MongoDB 
 
 Content is fetched using Axios and managed through Contentful, a headless CMS CDN. Minimal use of Material UI is employed. The application aims to provide reliable performance, straightforward content management, and a clean, user-friendly interface. 
 
-Deployed on Vercel 🚀
+Deployed on Vercel 
 ## Installation
 
 ### Prerequisites
