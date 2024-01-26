@@ -18,8 +18,8 @@ Content is fetched using Axios and managed through Contentful, a headless CMS CD
 ### Clone the Repository
 
 ```bash
-git clone 
-cd your-repo-name
+git https://github.com/NuminousCode/nextjs-news-site.git 
+cd git https://github.com/NuminousCode/nextjs-news-site.git 
 ```
 Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
 
