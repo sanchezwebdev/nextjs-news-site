@@ -24,7 +24,7 @@ const ArticlePage = ({ article }) => {
   const paragraphs = article.content.split("\\\\n\\\\n")
   // Generating a formatted CMS URL for the article image.
   const formatedCmsUrl = article && article.cmsUrl 
-  ? `${article.cmsUrl}?fm=webp`
+  ? `${article.cmsUrl}?fm=webp&w=750&h=750`
   : null;
 
   // Handler for checkbox state change.

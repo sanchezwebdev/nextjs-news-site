@@ -8,7 +8,7 @@ const Headline = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
   const formatedCmsUrl = data && data.cmsUrl 
-  ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
+  ? `${data.cmsUrl}?fm=webp&w=1500&h=1000`
   : null;
 
   // Effect hook to fetch article data.

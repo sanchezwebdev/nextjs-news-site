@@ -1,4 +1,5 @@
 import styles from '../../styles/Banner.module.css';
+import { useState, useEffect } from 'react';
 
 const Banner = ({ data }) => {
   let titleClass = styles.title;

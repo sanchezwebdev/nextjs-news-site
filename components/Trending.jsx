@@ -21,7 +21,7 @@ const Trending = ({ data, className }) => {
 
   // Generating a formatted CMS URL for the article image, with dynamic dimensions based on window width.
   const formatedCmsUrl = data && data.cmsUrl 
-    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 750 : 300}&h=${width < 740 ? 500 : 200}`
     : null;
   
     // Effect hook to fetch article data.

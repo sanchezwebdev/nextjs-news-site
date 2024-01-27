@@ -93,7 +93,7 @@ export async function getStaticProps({ params }) {
   const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
   const jsonResponse = await cmsResponse.json();
   const headerImgId = await jsonResponse.fields.file.url;
-  const headerImgUrl = `https:${headerImgId}?fm=webp`;
+  const headerImgUrl = `https:${headerImgId}?fm=webp&w=1500&h=1500`;
   const headerCategory = articles[0].category
 
   for (const article of articles) {
@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
     const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
     const imageData = await cmsResponse.json();
     const cmsUrl = await imageData.fields.file.url;
-    const formatedCmsUrl = `https:${cmsUrl}?fm=webp&w=1500&h=750`;
+    const formatedCmsUrl = `https:${cmsUrl}?fm=webp&w=500&h=500`;
     article.imgUrl = formatedCmsUrl;
     }
   }

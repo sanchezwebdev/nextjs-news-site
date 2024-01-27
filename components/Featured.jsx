@@ -22,7 +22,7 @@ import { useRouter } from 'next/router';
 
   // Generating a formatted CMS URL based on window width for responsive image fetching.
   const formatedCmsUrl = data && data.cmsUrl 
-    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 1500 : 300}&h=${width < 740 ? 750 : 200}`
+    ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 500 : 300}&h=${width < 740 ? 750 : 150}`
     : null;
 
   // Effect hook to fetch article data.
