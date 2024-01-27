@@ -2,6 +2,7 @@
 import {useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { Divider } from "@mui/material";
+import Image from "next/image";
 import fetchData from "../../api/fetchData";
 import useScrollPosition from "../../helpers/useScroll";
 import toggleBodyScroll from "../../helpers/toggleBodyScroll";
@@ -12,6 +13,8 @@ import Menu from "../../components/Menu";
 import styles from "../../styles/ArticlePage.module.css";
 
 const ArticlePage = ({ article }) => {
+  // Generating a formatted CMS URL for the article image.
+  const url = article.cmsUrl
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const scrollY = useScrollPosition();
@@ -22,8 +25,7 @@ const ArticlePage = ({ article }) => {
   const overlayStyle = isChecked ? styles.overlayActive : styles.overlayInactive;
   // Splits the article content by paragraphs.
   const paragraphs = article.content.split("\\\\n\\\\n")
-  // Generating a formatted CMS URL for the article image.
-  const url = article.cmsUrl
+ 
 
   // Handler for checkbox state change.
   const handleCheckboxChange = (checked) => {
@@ -47,6 +49,7 @@ const ArticlePage = ({ article }) => {
     };
   }, [router]);
 
+
   return (
     <div className = {styles.body}>
         <div className={overlayStyle} style={{ marginTop: `${dynamicMarginTop}px`}}></div>
@@ -59,7 +62,7 @@ const ArticlePage = ({ article }) => {
         <h1 className={styles.title}>{article.title}</h1> 
         <p className={styles.description}>{article.description}</p>
             <div className={styles.grid}>
-              <img src={url} alt="image" className={styles.image} />
+              <img src={url} alt="image" className={styles.image}/>
               <div className={styles.content}>
                 {paragraphs.map((paragraph, index) => (
                   <div key={index} className={styles.paragraph}>{paragraph}<br/><br/></div>
@@ -93,7 +96,7 @@ export const getStaticProps = async ({ params }) => {
     );
     const imageData = await cmsResponse.json();
     const cmsUrl = imageData.fields.file.url; 
-    const formattedCmsUrl = `${cmsUrl}?fm=webp&w=750&h=750`
+    const formattedCmsUrl = `https:${cmsUrl}?fm=webp&w=750&h=750`;
     article.cmsUrl = formattedCmsUrl
    
   }
