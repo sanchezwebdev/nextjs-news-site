@@ -23,9 +23,7 @@ const ArticlePage = ({ article }) => {
   // Splits the article content by paragraphs.
   const paragraphs = article.content.split("\\\\n\\\\n")
   // Generating a formatted CMS URL for the article image.
-  const formatedCmsUrl = article && article.cmsUrl 
-  ? `${article.cmsUrl}?fm=webp&w=750&h=750`
-  : null;
+  const url = article.cmsUrl
 
   // Handler for checkbox state change.
   const handleCheckboxChange = (checked) => {
@@ -61,7 +59,7 @@ const ArticlePage = ({ article }) => {
         <h1 className={styles.title}>{article.title}</h1> 
         <p className={styles.description}>{article.description}</p>
             <div className={styles.grid}>
-              <img src={formatedCmsUrl} alt="image" className={styles.image} />
+              <img src={url} alt="image" className={styles.image} />
               <div className={styles.content}>
                 {paragraphs.map((paragraph, index) => (
                   <div key={index} className={styles.paragraph}>{paragraph}<br/><br/></div>
@@ -94,7 +92,10 @@ export const getStaticProps = async ({ params }) => {
       `https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`
     );
     const imageData = await cmsResponse.json();
-    article.cmsUrl = imageData.fields.file.url; 
+    const cmsUrl = imageData.fields.file.url; 
+    const formattedCmsUrl = `${cmsUrl}?fm=webp&w=750&h=750`
+    article.cmsUrl = formattedCmsUrl
+   
   }
   
   if (!article) {

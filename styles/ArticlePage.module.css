@@ -60,7 +60,7 @@ Article Page styling
     width: 100%;
     max-width: 100%;
     grid-area: image;
-    transition: max-height .5s ease, width .5s ease;
+    transition: height .5s ease, width .5s ease;
 }
 
 .content {
@@ -146,7 +146,7 @@ Media Queries
         margin-bottom: 10px;
         width: 35vw;
         max-height: 600px;
-        transition: max-height .5s ease, width .5s ease;
+        transition: height .5s ease, width .5s ease;
     }
 
 }
