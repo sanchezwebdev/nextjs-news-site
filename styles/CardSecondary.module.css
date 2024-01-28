@@ -84,9 +84,9 @@ Media Queries
     }
 }
 @media(min-width: 740px){
-
     .image{
         height: 100%;
+        max-height: 150px;
     }
 
 .title4, .title7{
@@ -98,7 +98,7 @@ Media Queries
 @media(min-width: 1000px){
     .image{
         min-height: 80%;
-        height: auto;
+        max-height: 200px;
     }
 .title{
     height: auto;
