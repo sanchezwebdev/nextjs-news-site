@@ -1,5 +1,6 @@
 import { IoMenu, IoClose } from "react-icons/io5";
 import styles from "../styles/Header.module.css";
+import Link from "next/link";
 
 const Header = ({ isChecked, onCheckboxChange }) => {
 
@@ -14,7 +15,7 @@ const Header = ({ isChecked, onCheckboxChange }) => {
       />
       <header className={styles.header}>
         <span id={styles.span}></span>
-        <div className={styles.title}>The Pasadena Tribune</div>
+        <Link href="/" className = {styles.link}><div className={styles.title}>The Pasadena Tribune</div></Link>
         <label htmlFor="openSidebarMenu" className={styles.sidebarIconToggle}>
           <IoMenu className={styles.menu} id="menu"/> 
           <IoClose className={styles.menuClose} id="menuClose"/>

@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
   }, []);
 
   // Generating a formatted CMS URL based on window width for responsive image fetching.
-  const formatedCmsUrl = data && data.cmsUrl 
+  const formattedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 500 : 300}&h=${width < 740 ? 750 : 150}`
     : null;
 
@@ -53,7 +53,7 @@ import { useRouter } from 'next/router';
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
           <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
-          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <Divider className={styles.divider}/>
         </>
       )}

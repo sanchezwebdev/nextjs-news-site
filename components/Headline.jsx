@@ -7,7 +7,7 @@ import createSlug from "../helpers/slug"
 const Headline = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
-  const formatedCmsUrl = data && data.cmsUrl 
+  const formattedCmsUrl = data && data.cmsUrl 
   ? `${data.cmsUrl}?fm=webp&w=1500&h=1000`
   : null;
 
@@ -39,7 +39,7 @@ const Headline = ({ data, className }) => {
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
           <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
-          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <br/><Divider className={styles.hlDivider}/>
         </>
       )}

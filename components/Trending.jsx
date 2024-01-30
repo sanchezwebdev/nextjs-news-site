@@ -20,7 +20,7 @@ const Trending = ({ data, className }) => {
   }, []);
 
   // Generating a formatted CMS URL for the article image, with dynamic dimensions based on window width.
-  const formatedCmsUrl = data && data.cmsUrl 
+  const formattedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=${width < 740 ? 750 : 300}&h=${width < 740 ? 500 : 200}`
     : null;
   
@@ -52,7 +52,7 @@ const Trending = ({ data, className }) => {
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
           <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
-          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <Divider className={styles.divider}/>
         </>
       )}

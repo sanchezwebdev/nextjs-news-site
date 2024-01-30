@@ -9,7 +9,7 @@ const TitlePicture = ({ data, className }) => {
   const [articleData, setArticleData] = useState(null);
 
   // Generating a formatted CMS URL for the article image, with specific dimensions.
-  const formatedCmsUrl = data && data.cmsUrl 
+  const formattedCmsUrl = data && data.cmsUrl 
     ? `${data.cmsUrl}?fm=webp&w=1500&h=750`
     : null;
 
@@ -40,7 +40,7 @@ const TitlePicture = ({ data, className }) => {
       {articleData && (
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
-          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
           <Divider className={styles.divider} onClick={handleNavigation}/>
         </>
       )}

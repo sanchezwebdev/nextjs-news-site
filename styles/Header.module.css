@@ -23,7 +23,10 @@ Header Component Styling
   font-size: 28px;
   transition: font-size 300ms ease;
 }
-
+.link{
+  text-decoration: none;
+  color: black;
+}
 #span {
   display: none;
 }

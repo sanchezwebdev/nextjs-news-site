@@ -102,8 +102,8 @@ export async function getStaticProps({ params }) {
     const cmsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`);
     const imageData = await cmsResponse.json();
     const cmsUrl = await imageData.fields.file.url;
-    const formatedCmsUrl = `https:${cmsUrl}?fm=webp&w=500&h=500`;
-    article.imgUrl = formatedCmsUrl;
+    const formattedCmsUrl = `https:${cmsUrl}?fm=webp&w=500&h=500`;
+    article.imgUrl = formattedCmsUrl;
     }
   }
 

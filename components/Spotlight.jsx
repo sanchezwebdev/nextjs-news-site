@@ -7,7 +7,7 @@ import createSlug from "../helpers/slug"
 const Spotlight = ({ data, className }) => {
   const router = useRouter();
   const [articleData, setArticleData] = useState(null);
-  const formatedCmsUrl = data && data.cmsUrl 
+  const formattedCmsUrl = data && data.cmsUrl 
   ? `${data.cmsUrl}?fm=webp&w=1400&h=1100`
   : null;
 
@@ -49,7 +49,7 @@ const Spotlight = ({ data, className }) => {
         <>
         <h2 className={getTitleClass()} onClick={handleNavigation}>{articleData.title}</h2>
         <div className={styles.imageWrap}>
-          <img src={formatedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
         </div>
           <Divider className={styles.divider}/>
           </>

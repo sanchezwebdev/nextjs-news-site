@@ -143,8 +143,11 @@ export async function getServerSideProps() {
       `https://cdn.contentful.com/spaces/${spaceId}/assets/${imgId}?access_token=${accessToken}`
     );
     const imageData = await cmsResponse.json();
-    article.cmsUrl = imageData.fields.file.url; 
+    const cmsUrl = imageData.fields.file.url; 
+    const formattedCmsUrl = `https:${cmsUrl}?fm=webp&w=500&h=500`;
+    article.cmsUrl = formattedCmsUrl;
   }
+
 }
   return { props: { articles } };
 }
