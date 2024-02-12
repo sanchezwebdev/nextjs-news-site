@@ -50,7 +50,7 @@ Home Page Styling
 
 .containerMain {
   max-width: 1200px;
-  margin: 2% 5%;
+  margin: 0% 5%;
 }
 
 .containerFeatured,
@@ -63,6 +63,36 @@ Home Page Styling
   flex-direction: column;
   align-items: center;
 }
+
+  /*Day Time and Weather Styles*/
+  .dayTime{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    text-align: right;
+    right: 0;
+    position: relative;
+  }
+  .dayTime span{
+    font-size: 14px;
+  }
+  .weather{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .icon{
+    height: 30px;
+    width: 30px;
+  }
+  .temp{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+  }
 
 /*****************
 Media Queries
@@ -170,6 +200,18 @@ Media Queries
     max-height: 450px;
   }
 
+  .dayTime{
+    max-width: 1200px;
+    margin-top: 5px;
+  }
+  .dayTime span{
+    margin-right: 20px;
+  }
+  .icon{
+    height: 40px;
+    width: 40px;
+  }
+ 
 
 /*Grid Area Declarations*/
 .containerHeadline {grid-area: headline;}

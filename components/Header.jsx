@@ -3,7 +3,6 @@ import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 const Header = ({ isChecked, onCheckboxChange }) => {
-
   return (
       <>  
         <input
@@ -27,3 +26,4 @@ const Header = ({ isChecked, onCheckboxChange }) => {
 };
 
 export default Header;
+
