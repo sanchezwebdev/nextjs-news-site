@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from 'react'
+import { useEffect, useState } from 'react';
 import Link from 'next/link'
 import styles from '../styles/Menu.module.css'
 import useScrollPosition from '../helpers/useScroll'
