@@ -1,4 +1,3 @@
-// components/Layout.js
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { Divider } from "@mui/material";
@@ -45,11 +44,11 @@ const Layout = ({ children  }) => {
     };
   }, [router]);
 
- // In your component
+ 
 useEffect(() => {
   const fetchInternalWeatherData = async () => {
     const res = await fetch('/api/weather');
-    const data = await res.json(); // Use the weather data in your component
+    const data = await res.json(); 
     var temp = data.current.temp_f
     var iconUrl = data.current.condition.icon
     setTemp(temp)
@@ -58,8 +57,6 @@ useEffect(() => {
 
   fetchInternalWeatherData();
 }, []);
-
-
   
   return (
     <div className={styles.body}>
