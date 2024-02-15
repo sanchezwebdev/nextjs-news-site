@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import fetchData from "../../api/fetchData";
 import fetchRegister from '../../api/fetchRegister'

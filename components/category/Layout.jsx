@@ -57,6 +57,8 @@ useEffect(() => {
 
   fetchInternalWeatherData();
 }, []);
+
+
 useEffect(() => {
   if (iconUrl) {
     const link = document.createElement('link');
@@ -64,7 +66,7 @@ useEffect(() => {
     link.href = iconUrl;
     link.as = 'image';
     document.head.appendChild(link);
-    
+
     return () => {
       document.head.removeChild(link);
     };
