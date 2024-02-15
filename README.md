@@ -1,6 +1,6 @@
 #  Next.Js News Application | Serverless MongoDB Backend
 
-This application is a news platform built with Next.js and a serverless MongoDB backend. It uses getStaticProps for generating static pages and getStaticPaths for creating dynamic routes for individual news articles. 
+This application is a news platform built with Next.js and a serverless MongoDB backend. It uses getStaticProps for generating static pages and getStaticPaths for creating dynamic routes for individual news articles. It makes use of Day.Js and Weather API to provide current time and weather data. 
 
 Content is fetched using Axios and managed through Contentful, a headless CMS CDN. Minimal use of Material UI is employed. The application aims to provide reliable performance, straightforward content management, and a clean, user-friendly interface. 
 
@@ -10,9 +10,10 @@ Deployed on Vercel
 ### Prerequisites
 
 * Node.js: Preferably the latest LTS version. 
-* npm: Comes bundled with Node.js.
+* npm: comes bundled with Node.js.
 * Contentful Account
 * MongoDB Atlas
+
 
 
 ### Clone the Repository
@@ -33,6 +34,8 @@ DB_HEADER_IMAGES=https://your_database_url/endpoint/header_images
 DB_REGISTER=https://your_database_url/endpoint/register
 ACCESS_TOKEN=your_access_token_here
 SPACE_ID=your_space_id_here
+NEXT_PUBLIC_WEATHER_KEY=your_public_weather_key_here
+NEXT_PUBLIC_CITY_ID=your_city_id_here
 ```
 ## Running the application
 In Development
