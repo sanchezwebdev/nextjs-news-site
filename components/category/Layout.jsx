@@ -57,6 +57,19 @@ useEffect(() => {
 
   fetchInternalWeatherData();
 }, []);
+useEffect(() => {
+  if (iconUrl) {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = iconUrl;
+    link.as = 'image';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }
+}, [iconUrl]);
   
   return (
     <div className={styles.body}>
