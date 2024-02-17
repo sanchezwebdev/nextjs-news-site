@@ -23,6 +23,9 @@ Headline Component Styling
 .description {
     margin: 2% 0;
 }
+.hlDivider{
+    align-self: center;
+}
 
 /*****************
 Media Query
