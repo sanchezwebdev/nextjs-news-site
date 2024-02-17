@@ -89,7 +89,7 @@ useEffect(() => {
       <Divider className={styles.headerDivider} />
       <div className = {styles.dayTime}>
       <div className ={styles.weather}>
-      {iconUrl ? (
+      {iconUrl ? (<>
                 <img
                   src={iconUrl}
                   alt="Weather icon"
@@ -98,8 +98,9 @@ useEffect(() => {
                   onLoad={() => setIconLoaded(true)} 
                   onError={() => setIconLoaded(false)} 
                 />
-                  ) : null}
           <div className = {styles.temp}>{temp}&deg;</div>
+          </>
+                  ) : null}
       </div>
         <span>{formattedDate}</span>
       </div>
