@@ -18,6 +18,7 @@ const Layout = ({ children  }) => {
   var formattedDate = dayjs().tz('America/Los_Angeles').format('dddd, MMM D');
   var [temp, setTemp] = useState(null)
   var [iconUrl, setIconUrl] = useState(null)
+  var [iconLoaded, setIconLoaded] = useState(false);
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
   const scrollY = useScrollPosition();
@@ -72,6 +73,12 @@ useEffect(() => {
     };
   }
 }, [iconUrl]);
+
+useEffect(() => {
+  if (iconUrl) {
+    setIconLoaded(false); 
+  }
+}, [iconUrl]);
   
   return (
     <div className={styles.body}>
@@ -82,7 +89,16 @@ useEffect(() => {
       <Divider className={styles.headerDivider} />
       <div className = {styles.dayTime}>
       <div className ={styles.weather}>
-          <img src={iconUrl} alt="icon" className = {styles.icon}/>
+      {iconUrl ? (
+                <img
+                  src={iconUrl}
+                  alt="Weather icon"
+                  className={styles.icon}
+                  style={{ opacity: iconLoaded ? 1 : 0 }} 
+                  onLoad={() => setIconLoaded(true)} 
+                  onError={() => setIconLoaded(false)} 
+                />
+                  ) : null}
           <div className = {styles.temp}>{temp}&deg;</div>
       </div>
         <span>{formattedDate}</span>
