@@ -104,7 +104,7 @@ const SearchPage = ({ articles }) => {
               onChange={handleSearchChange}
               placeholder="Search..."
             />
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={styles.button} aria-label="Submit">
               <SearchIcon className={styles.icon}/>
             </button>
           </form>

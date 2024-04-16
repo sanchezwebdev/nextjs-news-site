@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { useRouter } from 'next/router';
 import fetchData from "../../api/fetchData";
 import fetchRegister from '../../api/fetchRegister'
@@ -12,11 +12,14 @@ import Sports from "./Sports"
 import ArtsEntertainment from "./ArtsEntertainment"
 import BusinessEconomy from "./BusinessEconomy"
 import Politics from "./Politics"
+import LoadingModal from "../../components/LoadingModal";
+export const ImageLoadContext = createContext();
 
 const CategoryPage = ({ categoryArticles, headerImgUrl, headerCategory }) => {
   const router = useRouter();
   const [isChecked, setIsChecked] = useState(false);
-
+  const [isImageLoaded, setImageLoaded] = useState(false);
+  
   useEffect(() => {
     toggleBodyScroll(isChecked);
   }, [isChecked]);
@@ -54,8 +57,9 @@ switch (router.query.category) {
   default:
     CategoryComponent = LocalNews; // Default component
 }
-  
+  console.log(categoryArticles)
   return (
+    <ImageLoadContext.Provider value={{ isImageLoaded, setImageLoaded }}>
     <Layout>
       <CategoryComponent
         categoryArticles={categoryArticles}
@@ -63,6 +67,7 @@ switch (router.query.category) {
         headerCategory={headerCategory}
       />
     </Layout>
+    </ImageLoadContext.Provider>
   )
 };
 

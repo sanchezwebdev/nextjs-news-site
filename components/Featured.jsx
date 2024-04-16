@@ -53,7 +53,7 @@ import { useRouter } from 'next/router';
         <>
           <h2 className={styles.title} onClick={handleNavigation}>{articleData.title}</h2>
           <p className={styles.description} onClick={handleNavigation}>{articleData.description}</p>
-          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation} loading="lazy"/>
+          <img src={formattedCmsUrl} className={styles.image} alt="image" onClick={handleNavigation}/>
           <Divider className={styles.divider}/>
         </>
       )}

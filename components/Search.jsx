@@ -22,7 +22,7 @@ const SearchInput = () => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search..."
       />
-      <button type="submit" className={styles.button}><SearchIcon style={{fontSize: 'xx-large'}}/></button>
+      <button type="submit" className={styles.button}><SearchIcon style={{fontSize: 'xx-large'}} aria-label="Search"/></button>
     </form>
   );
 };

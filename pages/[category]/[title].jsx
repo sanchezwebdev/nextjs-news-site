@@ -2,7 +2,6 @@
 import {useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { Divider } from "@mui/material";
-import Image from "next/image";
 import fetchData from "../../api/fetchData";
 import useScrollPosition from "../../helpers/useScroll";
 import toggleBodyScroll from "../../helpers/toggleBodyScroll";
