@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import LoadingModal from '../components/LoadingModal';
 import Head from 'next/head';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {isLoading && <LoadingModal />}
       <Component {...pageProps} />
+      {/* <Footer /> */}
     </>
   )
 }

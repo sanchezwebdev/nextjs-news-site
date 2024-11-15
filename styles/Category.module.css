@@ -21,6 +21,7 @@ Category styling
   width: 90%;
   max-width: 1200px;
   margin: 0% 5% 1% 5%;
+  /* border: red solid 1px; */
 }
 
 .overlayActive {

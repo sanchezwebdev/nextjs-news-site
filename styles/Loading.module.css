@@ -1,5 +1,5 @@
 .loadingModal {
-  opacity: 0;
+    opacity: 0;
     font-size: 48px;
     position: fixed;
     width: 100vw;
@@ -34,3 +34,9 @@
     100% { opacity: 1; }
   }
   
+  @media(max-width: 740px){
+    .loadingModal {
+      width: 100vw;
+      height: 100vh;
+  }
+  }

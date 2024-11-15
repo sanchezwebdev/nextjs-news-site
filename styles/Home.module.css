@@ -8,13 +8,24 @@ Home Page Styling
   align-items: center;
   margin-top: 2%;
   width: 100%;
+  padding: 0 20px;
+  margin-left: none;
+  /* border: 1px solid green; */
+}
+
+.appWrapper{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlayActive,
 .overlayInactive {
   position: fixed;
   margin-top: 60px;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   height: 100%;
   opacity: .5;
@@ -100,18 +111,20 @@ Media Queries
 ******************/
 
 @media (min-width: 740px) {
+  .body{
+    padding: 0 20px;
+  }
   .trendingTitle{
     margin: 0;
   }
-
   .header {
     height: 200px;
   }
-
+  
   .topTitle {
     display: none;
   }
-
+  
   /*Grid Layout*/
   .containerMain {
     display: grid;

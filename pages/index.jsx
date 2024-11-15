@@ -36,6 +36,7 @@ export default function Home({ articles }) {
 
 
   return (
+    <div className={styles.appWrapper}>
   <Layout>
       <div className={styles.containerMain}>
         <div className={styles.containerTop}>
@@ -110,6 +111,7 @@ export default function Home({ articles }) {
         </div>
       </div>
       </Layout>
+      </div>
   );
 };
 
