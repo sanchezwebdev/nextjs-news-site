@@ -3,6 +3,7 @@ Footer Component Styling
 ******************/
 
 .containerFooter {
+    /* margin-top: 20px; */
     display: flex;
     justify-content: center;
     color: white;
