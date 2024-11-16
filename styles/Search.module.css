@@ -15,7 +15,7 @@ Search Component Styling
 }
 
 .sectionDivider{
-  margin-bottom: 10px;
+  /* margin-bottom: 20px;  */
 }
 
 .overlayActive {
@@ -151,6 +151,7 @@ Media Queries
 @media(min-width: 500px) {
   .result {
     display: grid;
+    /* border: red solid 1px; */
     grid-column-gap: 20px;
     grid-template-columns: auto 30%;
     grid-template-areas:

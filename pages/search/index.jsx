@@ -112,13 +112,13 @@ const SearchPage = ({ articles }) => {
 
         <div className={styles.containerResults}>
           {results && <h1 className={styles.pageTitle}>Results</h1>}
-          <Divider className={styles.sectionDivider}/>
+          <Divider className={styles.sectionDivider} style={{ margin: "0 0 20px 0" }}/>
             {results.map((item) => (
               <div key={item._id} className={styles.result}>
                 <h3 className={styles.title} onClick={() => handleNavigation(item)}>{item.title}</h3>
                 <p className={styles.description} onClick={() => handleNavigation(item)}>{item.description}</p>
                 <img src={item.cmsUrl} alt="image" className={styles.image} onClick={() => handleNavigation(item)}/>
-                <Divider className={styles.resultDivider}/>
+                <Divider className={styles.resultDivider} style={{ margin: "20px 0", width: "100%" }}/>
               </div>
             ))}
         </div>
