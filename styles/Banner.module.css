@@ -48,7 +48,6 @@ Banne Styling
     text-wrap: wrap;
     text-align: center;
     vertical-align: middle;
-    max-width: 200px;
     font-size: 24px;
     color: white;
     transition: font-size .5s ease;
@@ -82,8 +81,8 @@ Media Queries
 
 @media(min-width: 400px) {
     .longTitle {
-        font-size: 32px;
-        max-width: 300px;
+        font-size: 28px;
+        /* max-width: 300px; */
     }
 
     .container {

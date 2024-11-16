@@ -17,8 +17,9 @@ Footer Component Styling
 }
 
 .siteName {
-    font-size: 28px;
-    font-family: 'Chomsky'
+    font-size: 24px;
+    font-family: 'Chomsky';
+    padding: 0 20px;
 }
 
 .innerFooter {
@@ -85,6 +86,9 @@ Footer Component Styling
 }
 
 @media(min-width: 550px) {
+    .siteName{
+        font-size: 28px;
+    }
     .box {
         height: 20%;
         font-size: 36px;

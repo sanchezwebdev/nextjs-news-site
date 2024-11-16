@@ -32,7 +32,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {isLoading && <LoadingModal />}
       <Component {...pageProps} />
-      {/* <Footer /> */}
     </>
   )
 }
